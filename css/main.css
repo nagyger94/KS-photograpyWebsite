@@ -1,6 +1,10 @@
 body{
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(240, 240, 240);
     font-family: 'Spectral', serif;
+}
+
+.element_container{
+    width: 100%;
 }
 
 #katie_logo{
@@ -20,8 +24,9 @@ a:hover{
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(240, 240, 240);
 }
+
 
 #menu_elemek li{
     font-size: 23px;
@@ -46,3 +51,15 @@ a:hover{
     padding-top: 100px;
 }
 
+.basic_formatting{
+    padding-top:30px;
+    font-weight:300;
+}
+
+.design_line{
+    width: 18%;
+}
+
+#photo_quote{
+    font-size: large;
+}
