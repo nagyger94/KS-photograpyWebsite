@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(231, 231, 231);
+}
+
+#katie_logo{
+    width: 12%;
+}
+
+.center{
+    margin: auto;
+    text-align: center;
+}
+#menu_bar{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: fixed;
+    top: 0; 
+    width: 100%;
+}
+
+#menu_elemek li{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 23px;
+    padding: 0px 10px 10px 10px;
+    text-align: inherit;
+    list-style-type: none;
+    display: inline-block;
+}
+
+#menu_elemek a{
+    text-decoration: none;
+    color: black;
+}
+
+#currently_active_menu{
+    color:rgb(26, 113, 113);
+}
