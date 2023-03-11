@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background-color: rgb(240, 240, 240);
+    font-family: 'Spectral', serif;
+}
+
+header{
+    height: 450px;
+    background-image: url(/img/cover1.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.borito_kontener{
+    padding-left: 100px;
+    padding-top: 70px;
+    max-width: 50%;
+}
+h1{
+    color: #a86c6c;
+    font-family: Dancing Script;
+    font-size: 85px;
+    animation: elotunes;
+    animation-duration: 2s;
+    
+}
+
+@keyframes elotunes{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+nav{
+    padding:0;
+    margin: 0;
+}
+nav ul{
+    text-align: center;
+    margin:0;
+    padding:10px;
+}
+
+nav li{
+    display: inline-block;
+    padding: 10px 20px;
+    transition: background 0.3s;
+}
+
+nav li:hover{
+    background-color: #DDD;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color:black;
+}
+
+#aktiv_oldal{
+    border-bottom: 1px solid #a86c6c;
+}
