@@ -1,3 +1,5 @@
+/*Főoldal és navigáció*/
+
 *{
     box-sizing: border-box;
 }
@@ -71,25 +73,37 @@ nav a{
     border-bottom: 1px solid #a86c6c;
 }
 
-section{
+#udvozlet{
     margin:auto;
-    padding:30px 20px;
-    max-width: 50%;
     text-align: center;
+    width: 70%;
+    padding: 50px 0px;
 }
 
-section p{
-    line-height: 1.5;
-    font-weight: 300;
+#udvozlet hr{
+    width: 15%;
 }
 
-h2{
-    padding: 10px;
-    font-weight: 500;
+#udvozlet p{
+    line-height: 2;
 }
 
-#erdo_kep{
-    width: 100%;
+#udvozlet h2{
+    margin: 15px 0px;
+}
+
+.kedvcsinalo_kontener{
+    width: 70%;
+    margin:auto
+}
+
+.kedvcsinalo_kontener img, .kedvcsinalo_kontener section{
+    width: 50%;
+}
+
+
+footer{
+    clear: both;
 }
 
 /*Rólam*/
