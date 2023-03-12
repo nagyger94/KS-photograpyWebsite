@@ -82,6 +82,7 @@ section p{
     line-height: 1.5;
     font-weight: 300;
 }
+
 h2{
     padding: 10px;
     font-weight: 500;
@@ -89,4 +90,52 @@ h2{
 
 #erdo_kep{
     width: 100%;
+}
+
+/*Rólam*/
+.content_container{
+    width:60%;
+    margin:auto;
+    padding-top: 25px;
+}
+
+.content_container h2{
+    text-align: center;
+    font-size: 60px;
+    padding: 0;
+    padding-top: 30px;
+    margin: auto;
+}
+
+.decor_line{
+    padding: 0;
+    width: 100px;
+}
+
+.content_container h2, .decor_line{
+    animation-name: elotunes;
+    animation-duration: 3s;
+}
+
+.content_container img{
+    width: 100%;
+    margin:auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content_container #katie{
+    display: block;
+    width: 50%;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.content_container p{
+    text-align: justify;
+}
+
+.content_container #idezetbox{
+    text-align: center;
+    padding: 20px;
 }
