@@ -11,7 +11,7 @@ body{
 
 header{
     height: 450px;
-    background-image: url(/img/cover1.jpg);
+    background-image: url(../img/cover1.jpg);
     background-position: top center;
     background-repeat: no-repeat;
 }
