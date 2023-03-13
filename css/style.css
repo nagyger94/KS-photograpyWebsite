@@ -188,7 +188,7 @@ footer{
     background-color: #915c5c;
   }
 
-  div {
+  .urlap_container, #kapcsolatok {
     height: 150;
     width: 60%;
     margin: auto;
