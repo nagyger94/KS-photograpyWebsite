@@ -16,6 +16,7 @@
     <!--Responsive dizájnhoz-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 
     <header>
@@ -36,53 +37,76 @@
     </nav>
 
     <main>
-        <p>
-            Az alábbi űrlap kitöltésével egyszerűen kérhetsz árajánlatot a felsorolt szolgáltatások bármelyikére.
-            Kérlek amennyiben nem találod ezek között azt a szolgáltatást, amelyikre szükséged lenne,
-            használd az oldal alján található üzenetküldőt, vagy keress a ........ található lehetőségek valamelyikén.
-        </p>
+        <section>
+            <hr class="design_line">
+                <p>
+                Az alábbi űrlap kitöltésével egyszerűen kérhetsz árajánlatot a felsorolt szolgáltatások bármelyikére.
+                Kérlek amennyiben nem találod ezek között azt a szolgáltatást, amelyikre szükséged lenne,
+                használd az oldal alján található üzenetküldőt, vagy keress a jobb oldalon található lehetőségek valamelyikén.
+                </p>
+                <hr class="design_line">
+            </section>
+
 
         <!--!!! Megbeszélni hogy hol látszodjon a személyes kontaktok !!!-->
         
         <form action="feldolgoz.php" method="POST" enctype="multipart/form-data">
+            <div>
+                <h4>
+                
+                 <label><input class="field" type="text" name="nev" placeholder="Név" size="25" required/> </label> <br/>
+                 <label><input class="field" type="date" name="szuletes" min="1920-01-01" required placeholder="-Választ-"/></label> <br/>
+                 <label><input class="field" type="email" name="email" placeholder="E-mail" required/></label> <br/>
+                 <label><input class="field" type="tel" name="phonenumber" placeholder="Telefonszám" required/> </label> <br/>
             
-                <label>Teljes név: <input type="text" name="full-name" size="25"/> </label> <br/>
-                <label>Születési dátum: <input type="date" name="date-of-birth" min="1920-01-01"/></label> <br/>
-                <label>E-mail: <input type="email" name="email" required/></label> <br/>
-                <label>Telefonszám: <input type="number" name="phonenumber"/> </label> <br/>
+
+                 <label for="szolgaltatas">Milyen fotózás érdekel?</label> <br/>
+                 <select id="szolgaltatas" class="field">
+                 <option value="select">-Választ-</option>
+                 <option value="eskuvo">Esküvői</option>
+                 <option value="eskuvo2">Külön napi esküvői</option>
+                 <option value="kreativ">Kreatív</option>
+                 <option value="csaladi">Családi</option>
+                 <option value="paros">Páros</option>
+                 <option value="baba">Baba</option>
+                 <option value="party">Buli</option>
+                 <option value="termek">Termék</option>
+                 </select> <br/>
+
+            
+                    <label for="op1">Férfi:</label>
+                    <input type="radio" id="op1" name="sex" value="m"/>
+                    <label for="op2">Nő:</label>
+                    <input type="radio" id="op2" name="sex" value="f"/>
+                    <label for="op3">Egyéb:</label>
+                    <input type="radio" id="op3" name="sex" value="other" checked/> <br/>
+
+
+                    <textarea class="field" rows="8" maxlength="200" placeholder="Uzenet (max 200 karatker)"></textarea> <br/>
             
 
-            <label for="szolgaltatas">Milyen fotózás érdekel?</label>
-            <select id="szolgaltatas">
-            <option value="eskuvo">Esküvői</option>
-            <option value="eskuvo2">Külön napi esküvői</option>
-            <option value="kreativ">Kreatív</option>
-            <option value="csaladi">Családi</option>
-            <option value="paros">Páros</option>
-            <option value="baba">Baba</option>
-            <option value="party">Buli</option>
-            <option value="termek">Termék</option>
-            </select> <br/>
+            
+                    <input type="checkbox" id="adatkezeles" name="adatkezeles" value="adatkezeles" required/>
+                    <label for="adatkezeles"> Az Adatkezelési tájékoztatóban foglaltakat megértettem, elfogadom és hozzájárulok személyes adataim kapcsolatfelvétel céljából való kezeléséhez. </label>
+                </h4>
+                  <!--Adatkezelési plussz fül???-->
 
-            Nem:
-            <label for="op1">Férfi:</label>
-            <input type="radio" id="op1" name="sex" value="m"/>
-            <label for="op2">Nő:</label>
-            <input type="radio" id="op2" name="sex" value="f"/>
-            <label for="op3">Egyéb:</label>
-            <input type="radio" id="op3" name="sex" value="other" checked/> <br/>
+                 <input type="reset" class="btn" name="reset-btn" value="Adatok törlése"/>
+                 <input type="submit" class="btn" name="submit-btn" value="Küldés"/> <br/>
+
+            </div>
 
 
-            <label for="introduction">Üzenet (max. 200 karakter):</label> <br/>
-            <textarea id="introduction" name="intro" maxlength="200"></textarea> <br/>
+                <div>
+                    <img id="phone_icon" 
+                    src="../img/phone_icon.jpg" alt="" width="50" height="50">
+                    <h4> +36 99 111 8888 </h4> <br/>
 
-            <input type="reset" name="reset-btn" value="Adatok törlése"/>
-            <input type="submit" name="submit-btn" value="Küldés"/> <br/>
-
-            <input type="checkbox" id="adatkezeles" name="adatkezeles" value="adatkezeles"/>
-            <label for="adatkezeles"> Az Adatkezelési tájékoztatóban foglaltakat megértettem, elfogadom és hozzájárulok személyes adataim kapcsolatfelvétel céljából való kezeléséhez. </label>
-
-            <!--Adatkezelési plussz fül???-->
+                    <img id="mail_icon" 
+                    src="../img/mail_icon.jpg" alt="" width="50" height="50">
+                    <h4> katie.smith@gmail.com </h4> <br/>
+                </div>
+                
         </form>
     </main>
     
