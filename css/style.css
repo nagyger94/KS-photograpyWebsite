@@ -153,6 +153,31 @@ footer{
     padding: 20px;
 }
 
+/*Referenciák*/
+.rovid_leiras_center p{
+    text-align: center;
+    padding-top: 10px;
+}
+
+#album{
+    width: 70%;
+    margin: auto;
+}
+
+.grid_container{
+    display: grid;
+    /*Hány oszlopot szeretnénk*/
+    grid-template-columns: auto auto auto;
+    column-gap: 9px;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.grid_item{
+    width: 30%;
+}
+
 /* árajánlat */
 .field{
     width: 100%;
