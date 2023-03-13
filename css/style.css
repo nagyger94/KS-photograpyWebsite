@@ -153,3 +153,45 @@ footer{
     text-align: center;
     padding: 20px;
 }
+
+/* árajánlat */
+.field{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    outline: none;
+    background-color: rgba(230,230,230,0.6);
+    margin-bottom: 22px;
+    transition: .3s;
+  }
+  
+  .field:hover{
+    background-color: rgba(0,0,0,0.1);
+  }
+  
+  .field:focus{
+    background-color: #fff;
+    border: 2px solid rgba(30,85,250,0,47);
+  }
+  
+  .btn{
+    width: 160px;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    background-color: #a86c6c;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #fff;
+    transition: .3s;
+  }
+  
+  .btn:hover{
+    background-color: #915c5c;
+  }
+
+  div {
+    height: 150;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+  }
