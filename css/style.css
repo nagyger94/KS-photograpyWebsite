@@ -92,13 +92,47 @@ nav a{
     margin: 15px 0px;
 }
 
-.kedvcsinalo_kontener{
+.center{
     width: 70%;
-    margin:auto
+    margin:auto;
 }
 
 .kedvcsinalo_kontener img, .kedvcsinalo_kontener section{
     width: 50%;
+}
+
+#werk_kontener{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    padding-top: 35px;
+}
+
+#werk_kontener p{
+    font-size: 18px;
+}
+
+iframe{
+    width: 550px;
+    height: 300px;
+}
+
+#ajanlat_box{
+    text-align: center;
+    padding: 35px;
+}
+
+#ajanlat_box::first-line{
+    padding: 30px;
+}
+
+#ajanlat_box a{
+    background-color: #a86c6c;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #a86c6c;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 footer{
@@ -178,6 +212,7 @@ footer{
 .grid_item{
     width: 30%;
 }
+
 
 /* árajánlat */
 .field{
