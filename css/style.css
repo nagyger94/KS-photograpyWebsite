@@ -114,13 +114,31 @@ nav a{
     width: 100%;
 }
 
-#kezdolap_grid section{
+.kezdolap_grid_item section{
     width: 90%;
     text-align: justify;
 }
 
 #kezdolap_grid h2{
     text-align: center;
+}
+
+#link_kontener{
+    text-align: center;
+    margin-top: 40px;
+}
+
+#link_kontener a[rel="alternate"]{
+    text-decoration: none;
+    background: #b58f9a;
+    border-radius: 20px;
+    color:#fff;
+    padding: 10px;
+    font-weight: 500;
+}
+
+#link_kontener a:hover{
+    background: #be8b9a;
 }
 
 #werk_kontener{
