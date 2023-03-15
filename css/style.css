@@ -105,7 +105,8 @@ nav a{
     display: grid;
     grid-template-columns: auto auto;
     gap: 60px 40px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .kezdolap_grid_item{
