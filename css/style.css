@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+p{
+    line-height: 2;
+}
+
 body{
     margin:0;
     padding:0;
@@ -101,6 +105,7 @@ nav a{
     display: grid;
     grid-template-columns: auto auto;
     gap: 60px 40px;
+    margin-bottom: 100px;
 }
 
 .kezdolap_grid_item{
@@ -142,19 +147,21 @@ nav a{
 }
 
 #werk_kontener{
-    width: 70%;
+    width: 50%;
     margin: auto;
     text-align: center;
-    padding-top: 35px;
+    border-top: solid 1px #b58f9a;
+    border-bottom: solid 1px #b58f9a;
 }
 
 #werk_kontener p{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 iframe{
-    width: 550px;
-    height: 300px;
+    width: 750px;
+    height: 375px;
+    margin-bottom: 20px;
 }
 
 #ajanlat_box{
@@ -166,17 +173,9 @@ iframe{
     padding: 30px;
 }
 
-#ajanlat_box a{
-    background-color: #a86c6c;
-    color: #fff;
-    text-decoration: none;
-    border: 1px solid #a86c6c;
-    border-radius: 20px;
-    padding: 5px;
-}
-
 footer{
     clear: both;
+    background-color: #ddd;
 }
 
 /*Rólam*/
