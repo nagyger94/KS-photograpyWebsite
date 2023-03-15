@@ -97,8 +97,30 @@ nav a{
     margin:auto;
 }
 
-.kedvcsinalo_kontener img, .kedvcsinalo_kontener section{
-    width: 50%;
+#kezdolap_grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 60px 40px;
+}
+
+.kezdolap_grid_item{
+    /*Flex-el tudjuk a gridben lévő elemeket középre igazítani*/
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+#kezdolap_grid img{
+    width: 100%;
+}
+
+#kezdolap_grid section{
+    width: 90%;
+    text-align: justify;
+}
+
+#kezdolap_grid h2{
+    text-align: center;
 }
 
 #werk_kontener{
@@ -291,3 +313,5 @@ tr:hover {
 @media only screen and (max-width: 768px) {
     table {
         width: 90%;
+    }
+}
