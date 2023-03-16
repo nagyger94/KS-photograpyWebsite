@@ -16,25 +16,25 @@ body{
 }
 
 header{
-    height: 450px;
+    height: 350px;
     background-image: url(../img/cover1.jpg);
     background-position: top center;
     background-repeat: no-repeat;
 }
 
-.borito_kontener{
-    padding-left: 100px;
-    padding-top: 70px;
-    max-width: 50%;
+#borito_kontener{
+    padding-left: 60px;
+    padding-top: 40px;
+    max-width: 40%;
+    text-align: center;
 }
 
-h1{
-    color: #a86c6c;
-    font-family: Dancing Script;
-    font-size: 85px;
+#borito_kontener img{
+    display: inline-block;
+    width: 350px;
+    margin-top: 120px;
     animation: elotunes;
-    animation-duration: 2s;
-    
+    animation-duration: 1s;  
 }
 
 @keyframes elotunes{
@@ -49,7 +49,12 @@ h1{
 nav{
     padding:0;
     margin: 0;
+    background: #dccfd3;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
+
 nav ul{
     text-align: center;
     margin:0;
@@ -59,11 +64,12 @@ nav ul{
 nav li{
     display: inline-block;
     padding: 10px 20px;
+    border-radius: 15px;
     transition: background 0.3s;
 }
 
 nav li:hover{
-    background-color: #DDD;
+    background-color: #c3a2aa;
 }
 
 nav a{
@@ -143,16 +149,16 @@ nav a{
     font-weight: 500;
 }
 
-#link_kontener a:hover{
+.link_kontener a:hover{
     background: #be8b9a;
 }
 
 #werk_kontener{
-    width: 50%;
+    width: 45%;
     margin: auto;
     text-align: center; 
-    border-top: solid 1px #b58f9a;
-    border-bottom: solid 1px #b58f9a;
+    border-top: solid 2px #b58f9a;
+    border-bottom: solid 2px #b58f9a;
 }
 
 #werk_kontener p{
@@ -160,8 +166,8 @@ nav a{
 }
 
 iframe{
-    width: 750px;
-    height: 375px;
+    width: 650px;
+    height: 400px;
     margin-bottom: 20px;
 }
 
@@ -175,9 +181,12 @@ iframe{
 }
 
 footer{
-    clear: both;
-    background-color: #ddd;
+    margin-top:20px;
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #ddd;
 }
+
+
 
 /*Rólam*/
 .content_container{
@@ -186,12 +195,13 @@ footer{
     padding-top: 25px;
 }
 
-.content_container h2{
+h1{
     text-align: center;
     font-size: 60px;
     padding: 0;
     padding-top: 30px;
     margin: auto;
+    animation: elotunes 1s;
 }
 
 .decor_line{
@@ -298,6 +308,7 @@ footer{
 /*Szolgáltatásim*/
 
 table {
+    z-index: 1;
     position: relative;
     left: 50%;
     top: 120%;
