@@ -101,7 +101,7 @@ nav a{
     margin:auto;
 }
 
-#kezdolap_grid{
+#kezdolap_grid, #also_grid{
     display: grid;
     grid-template-columns: auto auto;
     gap: 60px 40px;
@@ -116,7 +116,7 @@ nav a{
     justify-items: center;
 }
 
-#kezdolap_grid img{
+#kezdolap_grid img, #also_grid img{
     width: 100%;
 }
 
@@ -125,16 +125,16 @@ nav a{
     text-align: justify;
 }
 
-#kezdolap_grid h2{
+#kezdolap_grid h2, #also_grid h2{
     text-align: center;
 }
 
-#link_kontener{
+.link_kontener{
     text-align: center;
     margin-top: 40px;
 }
 
-#link_kontener a[rel="alternate"]{
+.link_kontener a[rel="alternate"]{
     text-decoration: none;
     background: #b58f9a;
     border-radius: 20px;
@@ -150,7 +150,7 @@ nav a{
 #werk_kontener{
     width: 50%;
     margin: auto;
-    text-align: center;
+    text-align: center; 
     border-top: solid 1px #b58f9a;
     border-bottom: solid 1px #b58f9a;
 }
@@ -270,7 +270,7 @@ footer{
   
   .field:focus{
     background-color: #fff;
-    border: 2px solid rgba(30,85,250,0,47);
+    border: 2px solid rgba(30,85,250,0);
   }
   
   .btn{
@@ -290,7 +290,6 @@ footer{
   }
 
   .urlap_container, #kapcsolatok {
-    height: 150;
     width: 60%;
     margin: auto;
     padding: 20px;
