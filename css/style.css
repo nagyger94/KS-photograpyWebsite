@@ -31,7 +31,7 @@ header{
 
 #borito_kontener img{
     display: inline-block;
-    width: 350px;
+    width: 60%;
     margin-top: 120px;
     animation: elotunes;
     animation-duration: 1s;  
@@ -219,6 +219,9 @@ footer h2{
     font-size: 20px;
 }
 
+footer label{
+    font-size: 90%;
+}
 
 /*Rólam*/
 .content_container{
