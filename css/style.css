@@ -124,6 +124,7 @@ nav a{
 
 #kezdolap_grid img, #also_grid img{
     width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 .kezdolap_grid_item section{
@@ -218,10 +219,6 @@ footer h2{
     font-size: 20px;
 }
 
-#hirlevel{
-
-}
-
 
 /*Rólam*/
 .content_container{
@@ -252,8 +249,8 @@ h1{
 .content_container img{
     width: 100%;
     margin:auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .content_container #katie{
@@ -261,6 +258,10 @@ h1{
     width: 50%;
     margin: auto;
     padding-top: 30px;
+}
+
+#studio_pic{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 .content_container p{
@@ -377,4 +378,36 @@ tr:hover {
     table {
         width: 90%;
     }
+}
+
+
+@media print{
+    table{
+        width: 500pt;
+        break-after: always;
+    }
+
+    .grid_container{
+        width: 600pt;
+    }
+
+    p{
+        font-size: 10pt;
+    }
+
+    header, nav, iframe{
+        display:none;
+    }
+
+    #borito_kontener img{
+        display: none;
+    }
+
+    h1, h2, h3{
+        page-break-after: avoid;
+    }
+}
+
+@page{
+    margin: 0.5cm;
 }
