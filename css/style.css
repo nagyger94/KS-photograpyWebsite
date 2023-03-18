@@ -32,6 +32,7 @@ header{
 #borito_kontener img{
     display: inline-block;
     width: 60%;
+    min-width: 150px;
     margin-top: 120px;
     animation: elotunes;
     animation-duration: 2s;  
@@ -127,6 +128,10 @@ nav a{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
+.kezdolap_grid_item .grid_photo{
+    min-width: 555px !important;
+}
+
 #apertura{
     display:block;
     margin: auto;
@@ -206,6 +211,7 @@ nav a{
 
 video{
     width: 80%;
+    min-width: 225px;
     margin-bottom: 20px;
 }
 
@@ -223,7 +229,7 @@ footer{
     border-top: 1px solid #cecece;
     border-bottom: 1px solid #ddd;
     height: 150px;
-    background: rgb(240, 240, 240);
+    background: rgb(236, 233, 233);
 }
 
 .footer_oszlop{
@@ -537,4 +543,62 @@ h1{
 
 @page{
     margin: 0.5cm;
+}
+
+@media screen and (max-width: 1100px){
+    header{
+        background-position: top center;
+        background-size: cover;
+    }
+
+    #kezdolap_grid, #also_grid{
+        grid-template-columns: auto;
+    }
+
+    #werk_kontener{
+        width: 70%;
+    }
+}
+
+
+@media screen and (max-width: 850px){
+    .footer_oszlop{
+        float: none;
+        width: 100%;
+     }
+     
+     #home{
+        display: none;
+     }
+
+     footer{
+        height: 270px;
+     }
+}
+
+@media screen and (max-width: 760px){
+    nav{
+        position:relative;
+    }
+    nav li{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 550px){
+    #borito_kontener{
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+
+    #werk_kontener{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #footer_submit{
+        margin-top: 20px;
+    }
 }
