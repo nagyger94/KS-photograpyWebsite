@@ -184,15 +184,35 @@ footer{
     margin-top:20px;
     border-top: 1px solid #cecece;
     border-bottom: 1px solid #ddd;
-    height: 120px;
+    height: 150px;
     background: rgb(240, 240, 240);
 }
 
 .footer_oszlop{
-    width: 50%;
+    width: 45%;
     text-align: center;
     float:left;
     margin:auto;
+}
+
+#home{
+    width: 10%;
+    height: 100px;
+    float: left;
+    align-content: center;
+}
+
+#home a{
+    display: block;
+    margin: auto;
+    padding-top: 25px;
+    height: 50px;
+}
+
+#home img{
+    display: block;
+    margin: auto;
+    height: 50px;
 }
 
 .footer_oszlop ol{
@@ -206,7 +226,7 @@ footer{
     padding-right: 6%;  
 }
 
-.footer_oszlop a > img{
+.footer_oszlop a > img, #copyright img{
     height: 20px;
 }
 
@@ -220,6 +240,38 @@ footer h2{
 
 footer label{
     font-size: 90%;
+}
+
+#footer_input{
+    height: 30px;
+    padding: 0.5rem 1rem;
+    outline: none;
+    background-color: rgba(230,230,230,0.6);
+    transition: .3s;
+    margin-left: 10px;
+}
+
+#footer_submit{
+    margin-left: 10px;
+    background-color: #b58f9a;
+    color: #fff;
+    padding: 5px 10px;
+
+}
+
+#copyright{
+    clear: left;
+    margin: auto;
+    text-align: center;
+}
+
+#copyright p::first-letter{
+    text-transform: capitalize;
+}
+
+#hirlevel img{
+    display: inline-block;
+    float: left;
 }
 
 /*Rólam*/
@@ -348,7 +400,7 @@ h1{
   }
 
   .urlap_container{
-    width: 30%;
+    width: 40%;
     margin: auto;
     padding: 20px;
     margin-bottom: 50px;
@@ -422,7 +474,7 @@ h1{
 @media print{
     table{
         width: 500pt;
-        break-after: always;
+        break-after:auto;
     }
 
     .grid_container{
@@ -433,7 +485,7 @@ h1{
         font-size: 10pt;
     }
 
-    header, nav, iframe{
+    header, nav{
         display:none;
     }
 
