@@ -63,7 +63,7 @@ nav ul{
 
 nav li{
     display: inline-block;
-    padding: 10px 20px;
+    padding: 8px 20px;
     border-radius: 15px;
     transition: background 0.3s;
 }
@@ -381,9 +381,13 @@ h1{
     padding-bottom: 30px;
 }
 
-
 .grid_item{
     width: 30%;
+    opacity: 90%;
+}
+
+.grid_item:hover{
+    opacity: 100%;
 }
 
 
