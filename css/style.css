@@ -303,6 +303,14 @@ h1{
 
 
 /* árajánlat */
+
+.rovid_leiras_arajanlat{
+    width: 60%;
+    margin:auto;
+    padding-top: 25px;
+    text-align: center;
+}
+
 .field{
     width: 100%;
     padding: 0.5rem 1rem;
@@ -313,7 +321,7 @@ h1{
   }
   
   .field:hover{
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(255, 44, 44, 0.1);
   }
   
   .field:focus{
@@ -324,28 +332,49 @@ h1{
   .btn{
     width: 160px;
     padding: 0.5rem 1rem;
+    border-radius: 20px;
     font-size: 1.1rem;
-    background-color: #a86c6c;
+    background-color: #b58f9a;
     cursor: pointer;
     outline: none;
     border: none;
     color: #fff;
     transition: .3s;
+    margin-top: 5%;
   }
   
   .btn:hover{
-    background-color: #915c5c;
+    background-color: #ad7f8d;
   }
 
-  .urlap_container, #kapcsolatok {
-    width: 60%;
+  .urlap_container{
+    width: 30%;
     margin: auto;
     padding: 20px;
+    margin-bottom: 50px;
+    font-weight: bold;
   }
+
+  .kapcsolatok{
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    
+  }
+
+  .contact{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    line-height: 50px;
+}
 
 /*Szolgáltatásim*/
 
-table {
+.table {
     z-index: 1;
     position: relative;
     left: 50%;
@@ -358,20 +387,27 @@ table {
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
 }
 
-tr {
+.table th {
+    background-color:#a86c6c;
+    text-align: center;
+    font-weight: bold;
     transition: all .2s ease-in;
     cursor: pointer;
 }
 
-th,
-td {
+.table tr {
+    transition: all .2s ease-in;
+    cursor: pointer;
+}
+
+.table td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-tr:hover {
-    background-color: #a86c6c;
+.table tr:hover {
+    background-color: #b58f9a;
     transform: scale(1.02);
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
 }
