@@ -34,7 +34,7 @@ header{
     width: 60%;
     margin-top: 120px;
     animation: elotunes;
-    animation-duration: 1s;  
+    animation-duration: 2s;  
 }
 
 @keyframes elotunes{
@@ -125,6 +125,44 @@ nav a{
 #kezdolap_grid img, #also_grid img{
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+#apertura{
+    display:block;
+    margin: auto;
+    width: 15% !important; 
+    box-shadow: none !important;
+    animation: porges 2s infinite;
+}
+
+@keyframes porges{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#felho{
+    display:block;
+    margin: auto;
+    padding-top: 30px;
+    width: 15% !important; 
+    box-shadow: none !important;
+    animation: pulzal 3s infinite;
+}
+
+@keyframes pulzal{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.75);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 
 .kezdolap_grid_item section{
@@ -267,11 +305,6 @@ footer label{
 
 #copyright p::first-letter{
     text-transform: capitalize;
-}
-
-#hirlevel img{
-    display: inline-block;
-    float: left;
 }
 
 /*Rólam*/
