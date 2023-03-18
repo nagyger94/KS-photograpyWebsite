@@ -47,68 +47,68 @@
         <p>Az alábbi listából választhatod ki a számodra legmegfelelőbb fotózási típust.</p>
     </div>
 
-      <table>
+      <table class="table">
       
             <colgroup>
               <col style="background-color: rgb(250, 226, 226);" span="4"/>
             </colgroup> 
 
           <tr id="header">
-            <th>Fotózás</th>
-            <th>Leírás</th>
-            <th>Időtartam</th>
-            <th>Végeredmény</th>
+            <th id="tipus">Fotózás</th>
+            <th id="leiras">Leírás</th>
+            <th id="idotartam">Időtartam</th>
+            <th id="vegeredmeny">Végeredmény</th>
           </tr>
           <tr>
-              <td>Esküvői </td>
-              <td>Előkészületek fotózása,
+              <td headers="tipus">Esküvői </td>
+              <td headers="leiras">Előkészületek fotózása,
                 szertartás fotózása,
                 csoportkép, csokordobás fotózása,
                 vacsora, tánc stb. fotózása </td>
-              <td>12 órás rendelkezésre állás </td>
-              <td>800 db teljes méretű fotó, utómunkával </td>
+              <td headers="idotartam">12 órás rendelkezésre állás </td>
+              <td headers="vegeredmeny">800 db teljes méretű fotó</td>
           </tr>
           <tr>        
-            <td>Kreatív esküvői fotózás</td>
-            <td>Műtermi vagy kültéri</td>
-            <td>120 perc</td>
-            <td>100 db teljes méretű fotó, utómunkával</td>
+            <td headers="tipus">Kreatív esküvői fotózás</td>
+            <td headers="leiras">Műtermi vagy kültéri</td>
+            <td headers="idotartam">120 perc</td>
+            <td headers="vegeredmeny">100 db teljes méretű fotó</td>
             </tr>
           <tr>
-            <td>Kreatív</td>
-            <td>Berendezett díszlet vagy élő környzetben történő fotózás</td>
-            <td>60 perc</td>
-            <td>100 db teljes méretű fotó, utómunkával</td>
+            <td headers="tipus">Kreatív</td>
+            <td headers="leiras">Berendezett díszlet vagy élő környzetben történő fotózás</td>
+            <td headers="idotartam">60 perc</td>
+            <td headers="vegeredmeny">100 db teljes méretű fotó</td>
           </tr>
           <tr>
-            <td>Családi</td>
-            <td>Műtermi vagy otthoni</td>
-            <td>60 perc</td>
-            <td>100 db teljes méretű fotó, utómunkával</td>
+            <td headers="tipus">Családi</td>
+            <td headers="leiras">Műtermi vagy otthoni</td>
+            <td headers="idotartam">60 perc</td>
+            <td headers="vegeredmeny">100 db teljes méretű fotó</td>
           </tr>
           <tr>
-            <td>Páros</td>
-            <td>Műtermi, otthoni vagy kültéri</td>
-            <td>30 perc</td>
-            <td>30 db retusált kép, utómunkával</td>
+            <td headers="tipus">Páros</td>
+            <td headers="leiras">Műtermi, otthoni vagy kültéri</td>
+            <td headers="idotartam">30 perc</td>
+            <td headers="vegeredmeny">30 db retusált kép</td>
           </tr>
           <tr>
-            <td>Baba</td>
-            <td>Műtermi vagy otthoni, előzetes egyeztetés alapján</td>
-            <td>45 perc</td>
-            <td>30 db retusált kép, utómunkával</td>
+            <td headers="tipus">Baba</td>
+            <td headers="leiras">Műtermi vagy otthoni, előzetes egyeztetés alapján</td>
+            <td headers="idotartam">45 perc</td>
+            <td headers="vegeredmeny">30 db retusált kép</td>
           </tr>
           <tr>
-            <td>Termék fotózás</td>
-            <td>Előzetes egyeztetés alapján lehetőség van különböző termékek befotózására</td>
-            <td>8 óra</td>
-            <td>Igény szerint kért mennyiségű kép retusálva, digitálisan</td>
+            <td headers="tipus">Termék fotózás</td>
+            <td headers="leiras">Előzetes egyeztetés alapján lehetőség van különböző termékek befotózására</td>
+            <td headers="idotartam">8 óra</td>
+            <td headers="vegeredmeny">Igény szerint kért mennyiségű kép retusálva, digitálisan</td>
           </tr>
           <tr>
-            <td>Buli</td>
-            <td>Céges rendezvényeken való fotózás</td>
-            <td>előre egyeztetett időtartam</td>
-            <td>100 db teljes méretű fotó, utómunkával</td>
+            <td headers="tipus">Buli</td>
+            <td headers="leiras">Céges rendezvényeken való fotózás</td>
+            <td headers="idotartam">előre egyeztetett időtartam</td>
+            <td headers="vegeredmeny">100 db teljes méretű fotó</td>
           </tr>        
         </table>
       
@@ -120,11 +120,22 @@
 
 
     <footer>
-      <hr>
-      <p>Minden jog fentartva</p>
-      <a href="">Facebook</a>
-      <a href="">Instagram</a>
-      <hr>
+      <div class="footer_oszlop">
+          <h2>Kövess minket:</h2>
+          <ol>
+              <li><a href="https://www.facebook.com/"><img src="../img/kapcsolat/facebook.png" alt=""></a></li>
+              <li><a href="https://www.instagram.com/"><img src="../img/kapcsolat/instagram_logo.png" alt=""></a></li>
+              <li><a href="https://www.twitter.com/"><img src="../img/kapcsolat/twitter.png" alt=""></a></li>
+          </ol>
+      </div>
+
+      <div id="hirlevel" class="footer_oszlop">
+          <h2>Iratkozz fel hírlevelünkre:</h2>
+          <form action="" method="POST">
+              <label for="email_add">Email: </label>
+              <input type="email" name="email_add" size="40px" maxlength="40" id=email_add>
+          </form>
+      </div>
   </footer>
 </body>
 </html>
