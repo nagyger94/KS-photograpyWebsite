@@ -516,12 +516,6 @@ h1{
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 800px) {
-    .table{
-        width: 90%;
-    }
-}
-
 
 @media print{
     table{
@@ -577,6 +571,10 @@ h1{
     .table{
         width: 70%;
     } 
+
+    .urlap_container{
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 850px){
@@ -602,6 +600,10 @@ h1{
     .content_container{
         width: 70%;
     }
+
+    .table{
+        width: 90%;
+    }
 }
 
 @media screen and (max-width: 760px){
@@ -611,10 +613,16 @@ h1{
     nav li{
         display: block;
     }
+
+    .urlap_container{
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 690px){
-
+    .content_container{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 550px){
@@ -630,10 +638,6 @@ h1{
 
     .content_container #katie{
         min-width: 300px;
-    }
-
-    .content_container{
-        width: 90%;
     }
 }
 
@@ -654,6 +658,16 @@ h1{
     .grid_item img{
         width: 100%;
     }
+
+    .content_container{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .contact{
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width: 400px){
@@ -669,4 +683,10 @@ h1{
         font-size: 11px;
         width: 100%;
      }
+}
+
+@media screen and (max-width: 370px){
+    .contact{
+        font-size: 11px;
+    }
 }
