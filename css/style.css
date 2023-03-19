@@ -321,6 +321,7 @@ footer label{
 }
 
 h1{
+    width: 100%;
     text-align: center;
     font-size: 60px;
     padding: 0;
@@ -484,7 +485,7 @@ h1{
     top: 50%;
     transform: translate(-50%, 0%);
     border-collapse: collapse;
-    width: 800px;
+    width: 50%;
     height: 200px;
     border: 1px solid #bdc3c7;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
@@ -572,6 +573,10 @@ h1{
     #werk_kontener{
         width: 70%;
     }
+
+    .table{
+        width: 70%;
+    } 
 }
 
 @media screen and (max-width: 850px){
@@ -632,6 +637,16 @@ h1{
     }
 }
 
+@media screen and (max-width: 500px){
+    .table{
+       font-size: 12px;
+    }
+
+    .content_container h1{
+        font-size: 40px;
+    }
+}
+
 @media screen and (max-width: 450px){
     .grid_item{
         width: 100%;
@@ -649,4 +664,9 @@ h1{
     .content_container #katie{
         min-width: 250px;
     }
+
+    .table{
+        font-size: 11px;
+        width: 100%;
+     }
 }
