@@ -575,6 +575,11 @@ h1{
     .urlap_container{
         width: 60%;
     }
+
+    .map iframe{
+        width: 500px;
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 850px){
@@ -617,6 +622,14 @@ h1{
     .urlap_container{
         width: 80%;
     }
+
+    .map{
+        width: 80%;
+    }
+    .map iframe{
+        width: 400px;
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 690px){
@@ -638,6 +651,11 @@ h1{
 
     .content_container #katie{
         min-width: 300px;
+    }
+
+    .map iframe{
+        width: 300px;
+        height: 200px;
     }
 }
 
@@ -683,6 +701,11 @@ h1{
         font-size: 11px;
         width: 100%;
      }
+
+     .map iframe{
+        width: 250px;
+        height: 125px;
+    }
 }
 
 @media screen and (max-width: 370px){
