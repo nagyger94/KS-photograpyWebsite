@@ -414,15 +414,17 @@ h1{
     background-color: rgba(230,230,230,0.6);
     margin-bottom: 22px;
     transition: .3s;
+    
   }
   
   .field:hover{
     background-color: rgba(255, 44, 44, 0.1);
+    
   }
   
   .field:focus{
     background-color: #fff;
-    border: 2px solid rgba(30,85,250,0);
+    
   }
   
   .btn{
@@ -437,6 +439,7 @@ h1{
     color: #fff;
     transition: .3s;
     margin-top: 5%;
+    font-family: 'Spectral',serif;
   }
   
   .btn:hover{
@@ -456,7 +459,6 @@ h1{
     margin: auto;
     padding: 20px;
     text-align: center;
-    
   }
 
   .contact{
@@ -466,7 +468,12 @@ h1{
     font-weight: bold;
     padding: 10px;
     line-height: 50px;
-}
+    }
+
+    .map iframe{
+        width: 60%;
+        height: 400px;
+    }
 
 /*Szolgáltatásim*/
 
@@ -474,7 +481,7 @@ h1{
     z-index: 1;
     position: relative;
     left: 50%;
-    top: 120%;
+    top: 50%;
     transform: translate(-50%, 0%);
     border-collapse: collapse;
     width: 800px;
@@ -508,8 +515,8 @@ h1{
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
 }
 
-@media only screen and (max-width: 768px) {
-    table {
+@media screen and (max-width: 800px) {
+    .table{
         width: 90%;
     }
 }
