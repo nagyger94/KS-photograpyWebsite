@@ -470,6 +470,10 @@ h1{
     padding: 10px;
     line-height: 50px;
     }
+    
+    .map {
+        text-align: center;
+    }
 
     .map iframe{
         width: 500px;
