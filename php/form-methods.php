@@ -47,6 +47,11 @@
     function checkErrors($data, $users){
         $errors = [];
 
+        $name = $data["name"];
+        if(!preg_match("/\\s/",$name) || preg_match("/[0-9]/",$name)){
+            $errors["name"] = "Kérjük adja meg a nevét!";
+        }
+
         foreach($users as $user){
             if($data["username"] === $user["username"]){
                 $errors["username"] = "A felhasználónév foglalt, kérjük válasszon másikat!";

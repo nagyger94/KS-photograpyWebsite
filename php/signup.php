@@ -66,7 +66,13 @@
                 <fieldset>
                     <legend>Személyes adatok</legend>
 
-                    <label>Név<input class="field" type="text" name="name" placeholder="Vezeték- és keresztnév" required></label>  
+                    <label>Név<input class="field" type="text" name="name" placeholder="Vezeték- és keresztnév" required></label>
+                        <?php
+                            if(isset($errors["name"])){
+                                echo '<p class="warning">' .$errors["name"] . "</p>";
+                            }
+                        ?>  
+
                     <label>Felhasználónév<input class="field" type="text" name="username" placeholder="Felhasználónév" required> </label> 
                         <?php
                             if(isset($errors["username"])){
