@@ -718,3 +718,11 @@ h1{
         font-size: 11px;
     }
 }
+
+.warning{
+    line-height: normal !important;
+    font-weight: lighter;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: red !important;
+}

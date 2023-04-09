@@ -44,15 +44,56 @@
         <form action="signup.php" method="POST">
             <div class="urlap_container">
 
+                            <!--Űrlapfeldolgozó algoritmus -->
+                <?php
+                    require "form-methods.php";
+                    if(isset($_POST["signup-btn"])){
+                        $users = loadUsers();
+
+                        $newUser = dataToArray();
+                        $errors = checkErrors($newUser, $users);
+
+                        if(count($errors) === 0){
+                            unset($newUser["password2"]); //kitöröljük a nem hashelt jelszót biztonsági okokból
+                            $users[] = $newUser;
+                            saveUsers($users);
+                            header("Location:kezdolap.php");
+                            echo '<script>alert("Gratulálunk, a regisztráció sikeres volt!")</script>';
+                        }   
+                    }                
+                ?>
+
                 <fieldset>
                     <legend>Személyes adatok</legend>
 
                     <label>Név<input class="field" type="text" name="name" placeholder="Vezeték- és keresztnév" required></label>  
                     <label>Felhasználónév<input class="field" type="text" name="username" placeholder="Felhasználónév" required> </label> 
+                        <?php
+                            if(isset($errors["username"])){
+                                echo '<p class="warning">' .$errors["username"] . "</p>";
+                            }
+                        ?>
+
                     <label>E-mail cím<input class="field" type="email" name="email" placeholder="E-mail" required></label>
+                        <?php
+                            if(isset($errors["email"])){
+                                echo '<p class="warning">' .$errors["email"] . "</p>";
+                            }
+                        ?>
 
                     <label>Jelszó<input class="field" type="password" name="password1" placeholder="A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!" required></label> 
+                        <?php
+                            if(isset($errors["jelszoKar"])){
+                                echo '<p class="warning">' .$errors["jelszoKar"] . "</p>";
+                            }
+                        ?>
+
                     <label>Jelszó újra<input class="field" type="password" name="password2" placeholder="Kérjük adja meg a jelszót újra" required></label>
+                        <?php
+                            if(isset($errors["jelszoMas"])){
+                                echo '<p class="warning">' .$errors["jelszoMas"] . "</p>";
+                            }
+                        ?>
 
                     <label for="szolgaltatas">Nemed?</label> <br>
                     <label for="op1">Férfi:</label>
@@ -65,25 +106,11 @@
 
                     <input type="submit" class="btn" id="signup-btn" name="signup-btn" value="Regisztrálok"> <br>
                 </fieldset>
+
+
+                
             </div>
         </form>
-
-        <!--Űrlapfeldolgozó algoritmus -->
-        <?php
-            require "form-methods.php";
-            $users = loadUsers();
-
-            $newUser = dataToArray();
-            $errors = checkErrors($newUser, $users);
-
-            if(count($errors) === 0){
-                unset($newUser["password2"]); //kitöröljük a nem hashelt jelszót biztonsági okokból
-                $users[] = $newUser;
-                saveUsers($users);
-            } else {
-                print_r($errors);
-            }
-        ?>
     </main>
 
     <footer>

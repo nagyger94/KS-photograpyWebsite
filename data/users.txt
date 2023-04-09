@@ -1,1 +1,5 @@
-a:5:{s:4:"name";s:10:"Alfa Tauri";s:8:"username";s:10:"ozuu444414";s:5:"email";s:11:"asd@asd.com";s:9:"password1";s:60:"$2y$10$TiBdJQJvwyvpzUjHv2bkG.mGddCKjguKIXOahf2lfFFugVr4X750u";s:3:"sex";s:1:"m";}
+a:5:{s:4:"name";s:12:"Nagy Gergely";s:8:"username";s:7:"ozuu444";s:5:"email";s:19:"nagyger94@gmail.com";s:9:"password1";s:60:"$2y$10$65yiG7Z/EC8L/sfNQXM2WuegmtD/uihvXhE/VMOHn1ESEoN1pqFXm";s:3:"sex";s:1:"m";}
+a:5:{s:4:"name";s:11:"Kiss János";s:8:"username";s:9:"kisjani43";s:5:"email";s:21:"kisjancso43@gmail.com";s:9:"password1";s:60:"$2y$10$BDHrfkdxE8P8A.fX62S87ePaIWUMvL9j3iBQsL4eJmKwEm636wXsu";s:3:"sex";s:1:"m";}
+a:5:{s:4:"name";s:10:"Kalim Pál";s:8:"username";s:8:"kalim321";s:5:"email";s:21:"kalimpal2@freemail.hu";s:9:"password1";s:60:"$2y$10$8D9opzGnZJubyxu0hIJuieYtBmyRB2ArVGb9rZDhbLHUnj6V/oYyW";s:3:"sex";s:1:"m";}
+a:5:{s:4:"name";s:13:"Agyalá Gyula";s:8:"username";s:8:"gyulus94";s:5:"email";s:18:"gyuluska@gmail.com";s:9:"password1";s:60:"$2y$10$qiTR2TzdOGRF03TkVD7dPesA2VSufNV3SQHEYk5fdk6Srk7xhEJ66";s:3:"sex";s:1:"m";}
+a:5:{s:4:"name";s:8:"Dil Emma";s:8:"username";s:10:"emmuska444";s:5:"email";s:20:"emmuska444@gmail.com";s:9:"password1";s:60:"$2y$10$xEmeeQYWxTyeyLUcfhmxeOL2c97X4NjF/7sO.E11r6P5f/XvFOiTq";s:3:"sex";s:1:"f";}

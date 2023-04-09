@@ -49,22 +49,22 @@
 
         foreach($users as $user){
             if($data["username"] === $user["username"]){
-                $errors[] = "A felhasználónév foglalt, kérjük válasszon másikat!";
+                $errors["username"] = "A felhasználónév foglalt, kérjük válasszon másikat!";
             }
 
             if($data["email"] === $user["email"]){
-                $errors[] = "Ezzel az email címmel már regisztráltak!";
+                $errors["email"] = "Ezzel az email címmel már regisztráltak!";
             }
         }
 
         $jelszo = $data["password2"];
 
         if(!preg_match('/[A-Z]/', $jelszo) || !preg_match('/[0-9]/', $jelszo)){
-            $errors[] = "A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!";
+            $errors["jelszoKar"] = "A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!";
         }
 
         if(!password_verify($jelszo, $data["password1"])){
-            $errors[] = "A két jelszó nem egyezik!";
+            $errors["jelszoMas"] = "A két jelszó nem egyezik!";
         }
 
         return $errors;
