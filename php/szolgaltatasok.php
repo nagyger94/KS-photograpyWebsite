@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Gombos Géza és Nagy Gergely">
+    <meta name="description" content="Kate Smith fotográfus oldala">
+    <meta name="keywords" content="fotográfia,fotók,képek,művészet,rendezvény fotózás">
+    <title>Kate Smith Photography | Moments Worth Remembering</title>
+    
+    <link rel="icon" href="../img/camera_icon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <!--Google betűtípus himportálása-->
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+    
+    <!--Responsive dizájnhoz-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+      <nav>
+        <ul>
+            <li><a href="kezdolap.html">Kezdőlap</a></li>
+            <li><a href="rolam.html">Rólam</a></li>
+            <li><a href="referenciak.html">Referenciák</a></li>
+            <li><a id="aktiv_oldal" href="szolgaltatasok.html">Szolgáltatások</a></li>
+            <li><a href="arajanlat.html">Árajánlatkérés</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div id="borito_kontener">
+            <!--
+                <h1 id="focim">Katie Smith Photograpy</h1>
+            -->
+            <img src="../img/katie_smith_logo.png" alt="Katie logo">
+        </div>    
+    </header>
+    
+    <main>
+
+      <div class="content_container">
+        <h1>Szolgáltatásaim</h1>
+        <hr class="decor_line">
+    </div>
+
+    <div class="rovid_leiras_center">
+        <p>Az alábbi listából választhatod ki a számodra legmegfelelőbb fotózási típust.</p>
+    </div>
+
+      <table class="table">
+      
+            <colgroup>
+              <col style="background-color: rgb(250, 226, 226);" span="4">
+            </colgroup> 
+
+          <tr id="header">
+            <th id="tipus">Fotózás</th>
+            <th id="leiras">Leírás</th>
+            <th id="idotartam">Időtartam</th>
+            <th id="vegeredmeny">Végeredmény</th>
+          </tr>
+          <tr>
+              <td headers="tipus">Esküvői </td>
+              <td headers="leiras">Előkészületek fotózása,
+                szertartás fotózása,
+                csoportkép, csokordobás fotózása,
+                vacsora, tánc stb. fotózása </td>
+              <td headers="idotartam">12 órás rendelkezésre állás </td>
+              <td headers="vegeredmeny">800 db teljes méretű fotó</td>
+          </tr>
+          <tr>        
+            <td headers="tipus">Kreatív esküvői fotózás</td>
+            <td headers="leiras">Műtermi vagy kültéri</td>
+            <td headers="idotartam">120 perc</td>
+            <td headers="vegeredmeny">100 db teljes méretű fotó</td>
+            </tr>
+          <tr>
+            <td headers="tipus">Kreatív</td>
+            <td headers="leiras">Berendezett díszlet vagy élő környzetben történő fotózás</td>
+            <td headers="idotartam">60 perc</td>
+            <td headers="vegeredmeny">100 db teljes méretű fotó</td>
+          </tr>
+          <tr>
+            <td headers="tipus">Családi</td>
+            <td headers="leiras">Műtermi vagy otthoni</td>
+            <td headers="idotartam">60 perc</td>
+            <td headers="vegeredmeny">100 db teljes méretű fotó</td>
+          </tr>
+          <tr>
+            <td headers="tipus">Páros</td>
+            <td headers="leiras">Műtermi, otthoni vagy kültéri</td>
+            <td headers="idotartam">30 perc</td>
+            <td headers="vegeredmeny">30 db retusált kép</td>
+          </tr>
+          <tr>
+            <td headers="tipus">Baba</td>
+            <td headers="leiras">Műtermi vagy otthoni, előzetes egyeztetés alapján</td>
+            <td headers="idotartam">45 perc</td>
+            <td headers="vegeredmeny">30 db retusált kép</td>
+          </tr>
+          <tr>
+            <td headers="tipus">Termék fotózás</td>
+            <td headers="leiras">Előzetes egyeztetés alapján lehetőség van különböző termékek befotózására</td>
+            <td headers="idotartam">8 óra</td>
+            <td headers="vegeredmeny">Igény szerint kért mennyiségű kép retusálva, digitálisan</td>
+          </tr>
+          <tr>
+            <td headers="tipus">Buli</td>
+            <td headers="leiras">Céges rendezvényeken való fotózás</td>
+            <td headers="idotartam">előre egyeztetett időtartam</td>
+            <td headers="vegeredmeny">100 db teljes méretű fotó</td>
+          </tr>        
+        </table>
+      
+      <div class="rovid_leiras_center">
+        <p>Az elkészült képek utómunkával és retusálással kerülnek átadásra felhő alapú tárhelyen. </p>
+        <p>A változtatás jogát fenntartom.</p>
+    </div>
+
+    </main>
+
+
+    <footer>
+      <div class="footer_oszlop">
+          <h2>Kövess minket:</h2>
+          <ol>
+              <li><a href="https://www.facebook.com/"><img src="../img/kapcsolat/facebook.png" alt=""></a></li>
+              <li><a href="https://www.instagram.com/"><img src="../img/kapcsolat/instagram_logo.png" alt=""></a></li>
+              <li><a href="https://www.twitter.com/"><img src="../img/kapcsolat/twitter.png" alt=""></a></li>
+          </ol>
+      </div>
+
+      <div id="home">
+          <a href="#borito_kontener"><img src="../img/kapcsolat/nyil.png" alt="Az oldal tetejére" title="Az oldal tetejére"></a>
+      </div>
+
+      <div id="hirlevel" class="footer_oszlop">
+          <h2>Iratkozz fel hírlevelünkre:</h2>
+          <form action="feldolgoz.php" method="POST">
+              <label for="footer_input">Email:</label>
+              <input id="footer_input" type="email" name="email_add" size="30" maxlength="30">
+              <label> <input id="footer_submit" type="submit" value="Küldés"></label>
+          </form>
+      </div>
+      
+      <div id="copyright">
+         <p> minden jog fenntartva © 2023</p>
+         
+      </div>
+  </footer>
+</body>
+</html>
