@@ -49,7 +49,8 @@
 
                     <label>Név<input class="field" type="text" name="name" placeholder="Vezeték- és keresztnév" required></label>  
                     <label>Felhasználónév<input class="field" type="text" name="username" placeholder="Felhasználónév" required> </label> 
-                    <label>E-mail cím<input class="field" type="email" name="email" placeholder="E-mail" required></label> 
+                    <label>E-mail cím<input class="field" type="email" name="email" placeholder="E-mail" required></label>
+
                     <label>Jelszó<input class="field" type="password" name="password1" placeholder="A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!" required></label> 
                     <label>Jelszó újra<input class="field" type="password" name="password2" placeholder="Kérjük adja meg a jelszót újra" required></label>
 
@@ -70,12 +71,13 @@
         <!--Űrlapfeldolgozó algoritmus -->
         <?php
             require "form-methods.php";
+            $users = loadUsers();
 
-            $data = dataToArray($_POST);
+            $newUser = dataToArray();
+            $errors = checkErrors($newUser, $users);
 
+            print_r($errors);
         ?>
-
-
     </main>
 
     <footer>
