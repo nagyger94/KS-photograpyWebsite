@@ -20,11 +20,11 @@
 <body>
     <nav>
         <ul>
-            <li><a id="aktiv_oldal" href="kezdolap.html">Kezdőlap</a></li>
-            <li><a href="rolam.html">Rólam</a></li>
-            <li><a href="referenciak.html">Referenciák</a></li>
-            <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
-            <li><a href="arajanlat.html">Árajánlatkérés</a></li>
+            <li><a id="aktiv_oldal" href="kezdolap.php">Kezdőlap</a></li>
+            <li><a href="rolam.php">Rólam</a></li>
+            <li><a href="referenciak.php">Referenciák</a></li>
+            <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
+            <li><a href="arajanlat.php">Árajánlatkérés</a></li>
         </ul>
     </nav>
     
@@ -60,7 +60,7 @@
                     <p>Csapatom színes egyéniségekből áll, akik a fotográfia különböző területeiről szereztek tapasztalatokat, így rugalmasan tudunk igazodni hozzád és az ötleteidhez. Legyen szó eskövői, családi vagy termékfotózásról, velünk oldott hangulatban élheted át életed jelentősebb állomásait.</p>
                     <p>Az elérhető szolgáltatásokról és azok csomagjairól itt olvashattok információkat:</p>
                     <div class="link_kontener">
-                        <a href="szolgaltatasok.html" rel="alternate">Szolgáltatásaink</a>
+                        <a href="szolgaltatasok.php" rel="alternate">Szolgáltatásaink</a>
                     </div>
                 </section>
             </div>
@@ -85,7 +85,7 @@
                     <p>Valószínűleg veled is megtörtént már, hogy egy-egy emlék olyan elevenen élt benned, hogy szinte ma is érzni véled a környező illatokat, a fény vibráló játékát és azt a mámoros légkört, ami az egészet körülvette. Fényképeink segítségével ezeket az intenzív emlékeket szeretnénk megőrizni és átadni neked, hogy mindig veled lehessenek.</p>
                     <p>Az alábbi linken megnézhetitek galériánkat, melyben a legszebb képekeinket válogattuk össze:</p>
                     <div class="link_kontener">
-                        <a href="referenciak.html" rel="alternate">Referenciák</a>
+                        <a href="referenciak.php" rel="alternate">Referenciák</a>
                     </div>
                 </section>
             </div>
@@ -117,7 +117,7 @@
         <div id="ajanlat_box" class="center">
             <strong>Felkeltettük az érdeklődésedet? Elképzeléseiddel keress meg minket bátran!</strong>
             <div class="link_kontener">
-                <a href="arajanlat.html" rel="alternate">Árajánlat kérése</a>
+                <a href="arajanlat.php" rel="alternate">Árajánlat kérése</a>
             </div>
         </div>
     </main>

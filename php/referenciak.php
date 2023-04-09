@@ -21,11 +21,11 @@
 
     <nav>
         <ul>
-            <li><a href="kezdolap.html">Kezdőlap</a></li>
-            <li><a href="rolam.html">Rólam</a></li>
-            <li><a id="aktiv_oldal" href="referenciak.html">Referenciák</a></li>
-            <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
-            <li><a href="arajanlat.html">Árajánlatkérés</a></li>
+            <li><a href="kezdolap.php">Kezdőlap</a></li>
+            <li><a href="rolam.php">Rólam</a></li>
+            <li><a id="aktiv_oldal" href="referenciak.php">Referenciák</a></li>
+            <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
+            <li><a href="arajanlat.php">Árajánlatkérés</a></li>
         </ul>
     </nav>
     
