@@ -76,7 +76,13 @@
             $newUser = dataToArray();
             $errors = checkErrors($newUser, $users);
 
-            print_r($errors);
+            if(count($errors) === 0){
+                unset($newUser["password2"]); //kitöröljük a nem hashelt jelszót biztonsági okokból
+                $users[] = $newUser;
+                saveUsers($users);
+            } else {
+                print_r($errors);
+            }
         ?>
     </main>
 

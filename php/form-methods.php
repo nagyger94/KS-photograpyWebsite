@@ -59,7 +59,7 @@
 
         $jelszo = $data["password2"];
 
-        if(!preg_match('/[A-Za-z]/', $jelszo) || !preg_match('/[0-9]/', $jelszo)){
+        if(!preg_match('/[A-Z]/', $jelszo) || !preg_match('/[0-9]/', $jelszo)){
             $errors[] = "A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!";
         }
 
