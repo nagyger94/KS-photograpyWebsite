@@ -64,9 +64,29 @@ nav ul{
 
 nav li{
     display: inline-block;
+    position: relative;
     padding: 8px 20px;
     border-radius: 15px;
     transition: background 0.3s;
+}
+
+body nav ul ul{
+    position: absolute;
+    background: #dccfd3;
+    display: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+body nav ul ul li{
+    display:block;
+
+}
+
+body nav ul li:hover ul{
+    display:block;
+    right: 0;
+    top:46px;
 }
 
 nav li:hover{

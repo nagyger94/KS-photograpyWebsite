@@ -25,6 +25,15 @@
             <li><a href="referenciak.php">Referenciák</a></li>
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
             <li><a href="arajanlat.php">Árajánlatkérés</a></li>
+            <li>
+                <a href="">Ügyfeleinknek</a>
+                <ul>
+                    <li><a href="">Bejelentkezés</a></li>
+                    <li><a href="">Profilod</a></li>
+                    <li><a href="">Képeid</a></li>
+                    <li><a href="">Vélemények</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
     
