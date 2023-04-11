@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -25,6 +29,20 @@
             <li><a href="referenciak.php">Referenciák</a></li>
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
             <li><a href="arajanlat.php">Árajánlatkérés</a></li>
+            <li>
+                <a href="">Ügyfeleinknek</a>
+                <ul>
+                <?php if (isset($_SESSION["user"])) { ?>
+                        <li><a href="logout.php">Kijelentkezés</a></li>
+                        <li><a href="profile.php">Profilod</a></li>
+                        <li><a href="">Képeid</a></li>
+                        <li><a href="">Vélemények</a></li>
+                    <?php } else { ?>
+                        <li><a href="login.php">Bejelentkezés</a></li>
+                        <li><a href="signup.php">Regisztráció</a></li>
+                    <?php } ?>
+                </ul>
+            </li>
         </ul>
     </nav>
     
