@@ -1,4 +1,28 @@
+<?php
+ session_start();
+ include "form-methods.php";         
+ $users = loadUsers();
 
+    if (isset($_POST["submit-btn"])) {
+        if (!isset($_POST["felhasznalonev"]) || trim($_POST["felhasznalonev"]) === "" || !isset($_POST["jelszo"]) || trim($_POST["jelszo"]) === ""){
+            echo '<script>alert("Adj meg minden adatot!")</script>';
+
+        } else {
+            $felhasznalonev = $_POST["felhasznalonev"];
+            $jelszo = $_POST["jelszo"];
+            echo '<script>alert("Sikertelen belépés! A belépési adatok nem megfelelők!")</script>';
+
+        foreach ($users as $user) {              
+            if ($user["felhasznalonev"] === $felhasznalonev && password_verify($jelszo, $user["jelszo"])) {
+                            
+            echo '<script>alert("Sikeres belépés!")</script>';
+            $_SESSION["user"] = $user;
+            header("Location:kezdolap.php");
+            }
+          }
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="hu">
@@ -22,18 +46,23 @@
     <body>
         <nav>
             <ul>
-            <li><a href="kezdolap.html">Kezdőlap</a></li>
-            <li><a href="rolam.html">Rólam</a></li>
-            <li><a href="referenciak.html">Referenciák</a></li>
-            <li><a href="szolgaltatasok.html">Szolgáltatások</a></li>
-            <li><a id="login.html" href="arajanlat.html">Árajánlatkérés</a></li>
+            <li><a href="kezdolap.php">Kezdőlap</a></li>
+            <li><a href="rolam.php">Rólam</a></li>
+            <li><a href="referenciak.php">Referenciák</a></li>
+            <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
+            <li><a id="login.php" href="arajanlat.php">Árajánlatkérés</a></li>
             <li>
                 <a href="">Ügyfeleinknek</a>
                 <ul>
-                    <li><a href="login.php">Bejelentkezés</a></li>
-                    <li><a href="">Profilod</a></li>
-                    <li><a href="">Képeid</a></li>
-                    <li><a href="">Vélemények</a></li>
+                <?php if (isset($_SESSION["user"])) { ?>
+                        <li><a href="logout.php">Kijelentkezés</a></li>
+                        <li><a href="profile.php">Profilod</a></li>
+                        <li><a href="">Képeid</a></li>
+                        <li><a href="">Vélemények</a></li>
+                    <?php } else { ?>
+                        <li><a href="login.php">Bejelentkezés</a></li>
+                        <li><a href="signup.php">Regisztráció</a></li>
+                    <?php } ?>
                 </ul>
             </li>
             </ul>
@@ -55,38 +84,13 @@
                 <hr class="decor_line">
             </div>
 
-         <?php
-            require "form-methods.php";         
-            $users = loadUsers();
-
-            if (isset($_POST["submit-btn"])) {
-                if (!isset($_POST["felhasznalonev"]) || trim($_POST["felhasznalonev"]) === "" || !isset($_POST["password"]) || trim($_POST["password"]) === ""){
-                    echo '<script>alert("Adj meg minden adatot!")</script>';
-
-                } else {
-                        $felhasznalonev = $_POST["felhasznalonev"];
-                        $jelszo = $_POST["password"];
-                        echo '<script>alert("Sikertelen belépés! A belépési adatok nem megfelelők!")</script>';
-
-                    foreach ($users as $user) {              
-                        if ($user["felhasznalonev"] === $felhasznalonev && password_verify($jelszo, $user["password"])) {
-                            
-                            break;
-                        }
-                    }
-                }
-                echo '<script>alert("Sikeres belépés!")</script>';
-                header("Location:profile.php");
-            }
-         ?>
-
             <form action="login.php" method="POST" enctype="multipart/form-data">
                 <div class="urlap_container">
                 
                     <fieldset>
                         <legend>Személyes adataid</legend>
                         <label>Felhasználónév<input class="field" type="text" name="felhasznalonev" placeholder="Név" required> </label> 
-                        <label>Jelszó<input class="field" type="password" name="password" placeholder="Jelszó" required> </label> 
+                        <label>Jelszó<input class="field" type="password" name="jelszo" placeholder="Jelszó" required> </label> 
                     </fieldset>
 
                 
