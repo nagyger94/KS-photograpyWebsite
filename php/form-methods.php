@@ -64,24 +64,30 @@
         }
 
         foreach($users as $user){
-            if($data["username"] === $user["username"]){
-                $errors["username"] = "A felhasználónév foglalt, kérjük válasszon másikat!";
+            if(isset($data["username"])){
+                if($data["username"] === $user["username"]){
+                    $errors["username"] = "A felhasználónév foglalt, kérjük válasszon másikat!";
+                }
             }
 
-            if($data["email"] === $user["email"]){
-                $errors["email"] = "Ezzel az email címmel már regisztráltak!";
-            }
+            if(isset($data["email"])){
+                if($data["email"] === $user["email"]){
+                    $errors["email"] = "Ezzel az email címmel már regisztráltak!";
+                }
+            }     
         }
 
-        $jelszo = $data["password2"];
+        //$jelszo = $data["password2"];
 
-        if(!preg_match('/[A-Z]/', $jelszo) || !preg_match('/[0-9]/', $jelszo)){
-            $errors["jelszoKar"] = "A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!";
-        }
+        //if(!preg_match('/[A-Z]/', $jelszo) || !preg_match('/[0-9]/', $jelszo)){
+            //$errors["jelszoKar"] = "A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!";
+        //}
 
-        if(!password_verify($jelszo, $data["password1"])){
+        /*if(!password_verify($jelszo, $data["password1"])){
             $errors["jelszoMas"] = "A két jelszó nem egyezik!";
-        }
+        }*/
+
+        var_dump($_FILES);
 
         if(isset($_FILES["avatar"])){
             $kepAdatok = $_FILES["avatar"];
@@ -90,13 +96,13 @@
             $kiterjesztes = $kiterjesztes = strtolower(pathinfo($kepAdatok["name"], PATHINFO_EXTENSION));
 
             if (in_array($kiterjesztes, $engedelyezett_kiterjesztesek)) {
-                if ($_FILES["profile-pic"]["error"] === 0) {
+                if ($kepAdatok["error"] === 0) {
                         //A felhasználó nevét használjuk az avatár elnevezéséhez
-                        $kepAdatok["name"] = $_SESSION["user"]["username"]."-avatar".$kiterjesztes;
+                        $kepAdatok["name"] = $_SESSION["user"]["username"]."-avatar.".$kiterjesztes;
 
-                        $cel = "../img/profile-pictures";
+                        $cel = "../img/profile-pictures/".$kepAdatok["name"];
 
-                        if (move_uploaded_file($kepAdatok["name"], $cel)) {
+                        if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $cel)) {
                             echo "Sikeres fájlfeltöltés! <br/>";
                         } else {
                             echo "Sikertelen fájlfeltöltés";
@@ -108,10 +114,6 @@
                 echo "<strong>Hiba:</strong>A fájl kiterjesztése nem megfelelő!<br/>";
             }
         }
-        
-
-
-        return $errors;
     }
      
 ?>

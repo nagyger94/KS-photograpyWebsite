@@ -63,27 +63,27 @@
         </div>
 
        
+        <!--Űrlapfeldolgozó algoritmus -->
+        <?php
+            require "form-methods.php";
+            if(isset($_POST["change-btn"])){
+                $users = loadUsers();
+
+                $changedData = changedDataToArray();
+                $errors = checkErrors($changedData, $users);
+
+                /*if(count($errors) === 0){
+                    unset($newUser["password2"]); //kitöröljük a nem hashelt jelszót biztonsági okokból
+                    $users[] = $newUser;
+                    saveUsers($users);
+                    $_SESSION["signup"] = true;
+                    header("Location:login.php");
+                }  */ 
+            }                
+        ?>
+
         <div class="urlap_container">
-            <form action="change-profile.php" method="POST">
-
-                <!--Űrlapfeldolgozó algoritmus -->
-                <?php
-                    require "form-methods.php";
-                    if(isset($_POST["change-btn"])){
-                        $users = loadUsers();
-
-                        $changedData = changedDataToArray();
-                        $errors = checkErrors($changedData, $users);
-
-                        /*if(count($errors) === 0){
-                            unset($newUser["password2"]); //kitöröljük a nem hashelt jelszót biztonsági okokból
-                            $users[] = $newUser;
-                            saveUsers($users);
-                            $_SESSION["signup"] = true;
-                            header("Location:login.php");
-                        }  */ 
-                    }                
-                ?>
+            <form action="change-profile.php" method="POST" enctype="multipart/form-data">
 
                 <fieldset>
                     <legend>Személyes adatok</legend>
