@@ -75,8 +75,8 @@
                             unset($newUser["password2"]); //kitöröljük a nem hashelt jelszót biztonsági okokból
                             $users[] = $newUser;
                             saveUsers($users);
-                            header("Location:kezdolap.php");
-                            echo '<script>alert("Gratulálunk, a regisztráció sikeres volt!")</script>';
+                            $_SESSION["signup"] = true;
+                            header("Location:login.php");
                         }   
                     }                
                 ?>
@@ -121,11 +121,9 @@
 
                     <label for="szolgaltatas">Nemed?</label> <br>
                     <label for="op1">Férfi:</label>
-                    <input type="radio" id="op1" name="sex" value="m">
+                    <input type="radio" id="op1" name="sex" value="m" checked>
                     <label for="op2">Nő:</label>
                     <input type="radio" id="op2" name="sex" value="f">
-                    <label for="op3">Egyéb:</label>
-                    <input type="radio" id="op3" name="sex" value="other" checked>
                     <br>
 
                     <input type="submit" class="btn" id="signup-btn" name="signup-btn" value="Regisztrálok"> <br>

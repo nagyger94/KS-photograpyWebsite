@@ -58,6 +58,13 @@
 
 
     <main>
+        <?php
+            if(isset($_SESSION["user"]["username"])){
+                $nev = explode(" ", $_SESSION["user"]["name"]);
+                echo '<h2 id="login_success_message"> Sikeres bejelentkezés! Isten hozott '.$nev[1].'!</h2>';
+            }
+        ?>
+
         <div id="udvozlet">
             <section>
                 <hr class="design_line">

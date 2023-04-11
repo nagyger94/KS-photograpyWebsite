@@ -776,3 +776,9 @@ h1{
 #change-info{
     margin-top: 2%;
 }
+
+#login_success_message, #signup_success_message{
+    text-align: center;
+    padding-top: 50px;
+    color:#000000;
+}

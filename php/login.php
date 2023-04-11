@@ -79,6 +79,13 @@
 
         <main>
 
+           <?php
+                if(isset($_SESSION["signup"])){
+                    unset($_SESSION["signup"]);
+                    echo '<h2 id="signup_success_message"> Sikeres regisztráció! Kérlek, jelentkezz be!</h2>';
+                }
+           ?>
+
             <div class="content_container">
                 <h1>Bejelentkezés</h1>
                 <hr class="decor_line">

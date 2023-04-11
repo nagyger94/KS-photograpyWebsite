@@ -63,7 +63,7 @@
             $users = loadUsers();
 
             foreach($users as $user){
-                if($user["username"] === "ozuu444"){ //ide kell majd a bejelentkezett felhasználónevet dinamikusan berakni
+                if($user["username"] === $_SESSION["user"]["username"]){ //ide kell majd a bejelentkezett felhasználónevet dinamikusan berakni
                     $name = $user["name"];
                     $username= $user["username"];
                     $email = $user["email"];
