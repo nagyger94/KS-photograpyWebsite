@@ -1,5 +1,5 @@
 <?php
-  session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
 <body>
     <nav>
         <ul>
-            <li><a id="aktiv_oldal" href="kezdolap.php">Kezdőlap</a></li>
+            <li><a href="kezdolap.php">Kezdőlap</a></li>
             <li><a href="rolam.php">Rólam</a></li>
             <li><a href="referenciak.php">Referenciák</a></li>
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
@@ -39,7 +39,7 @@
                         <li><a href="">Vélemények</a></li>
                     <?php } else { ?>
                         <li><a href="login.php">Bejelentkezés</a></li>
-                        <li><a id="aktiv_oldal" href="signup.php">Regisztráció</a></li>
+                        <li><a href="signup.php">Regisztráció</a></li>
                     <?php } ?>
                 </ul>
             </li>
@@ -56,83 +56,82 @@
     </header>
 
     <main>
-        <h1>Regisztráció</h1>
-        <hr class="decor_line">
+        <div class="content_container">
+            <h1>Adatok módosítása</h1>
+            <hr class="decor_line">
+            <p id="center_align">Ezen az oldalon módosíthatod a profilod adatait. Azokhoz a mezőkhöz adj meg új adatot, amelyeken változtatni szeretnél!</p>
+        </div>
 
-        <form action="signup.php" method="POST">
-            <div class="urlap_container">
+       
+        <div class="urlap_container">
+            <form action="change-profile.php" method="POST">
 
                 <!--Űrlapfeldolgozó algoritmus -->
                 <?php
                     require "form-methods.php";
-                    if(isset($_POST["signup-btn"])){
+                    if(isset($_POST["change-btn"])){
                         $users = loadUsers();
 
-                        $newUser = dataToArray();
-                        $errors = checkErrors($newUser, $users);
+                        $changedData = changedDataToArray();
+                        $errors = checkErrors($changedData, $users);
 
-                        if(count($errors) === 0){
+                        /*if(count($errors) === 0){
                             unset($newUser["password2"]); //kitöröljük a nem hashelt jelszót biztonsági okokból
                             $users[] = $newUser;
                             saveUsers($users);
                             $_SESSION["signup"] = true;
                             header("Location:login.php");
-                        }   
+                        }  */ 
                     }                
                 ?>
 
                 <fieldset>
                     <legend>Személyes adatok</legend>
 
-                    <label>Név<input class="field" type="text" name="name" placeholder="Vezeték- és keresztnév" required></label>
+                    <label>Név<input class="field" type="text" name="name" placeholder="Vezeték- és keresztnév"></label>
                         <?php
                             if(isset($errors["name"])){
                                 echo '<p class="warning">' .$errors["name"] . "</p>";
                             }
                         ?>  
 
-                    <label>Felhasználónév<input class="field" type="text" name="username" placeholder="Felhasználónév" required> </label> 
-                        <?php
-                            if(isset($errors["username"])){
-                                echo '<p class="warning">' .$errors["username"] . "</p>";
-                            }
-                        ?>
-
-                    <label>E-mail cím<input class="field" type="email" name="email" placeholder="E-mail" required></label>
+                    <label>E-mail cím<input class="field" type="email" name="email" placeholder="E-mail"></label>
                         <?php
                             if(isset($errors["email"])){
                                 echo '<p class="warning">' .$errors["email"] . "</p>";
                             }
                         ?>
 
-                    <label>Jelszó<input class="field" type="password" name="password1" placeholder="A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!" required></label> 
+                    <label>Új jelszó<input class="field" type="password" name="password1" placeholder="A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!"></label> 
                         <?php
                             if(isset($errors["jelszoKar"])){
                                 echo '<p class="warning">' .$errors["jelszoKar"] . "</p>";
                             }
                         ?>
 
-                    <label>Jelszó újra<input class="field" type="password" name="password2" placeholder="Kérjük adja meg a jelszót újra" required></label>
+                    <label>Új jelszó újra<input class="field" type="password" name="password2" placeholder="Kérjük adja meg a jelszót újra"></label>
                         <?php
                             if(isset($errors["jelszoMas"])){
                                 echo '<p class="warning">' .$errors["jelszoMas"] . "</p>";
                             }
                         ?>
 
-                    <label for="szolgaltatas">Nemed?</label> <br>
-                    <label for="op1">Férfi:</label>
+                    <label>Nemed?</label> <br>
+                    <label>Férfi:</label>
                     <input type="radio" id="op1" name="sex" value="m" checked>
-                    <label for="op2">Nő:</label>
+                    <label>Nő:</label>
                     <input type="radio" id="op2" name="sex" value="f">
+                    <br><br>
+
+                    <label>Profilkép feltöltése: </label>
+                    <input type="file" name="avatar" id="avatar" accept="image/*">
                     <br>
 
-                    <input type="submit" class="btn" id="signup-btn" name="signup-btn" value="Regisztrálok"> <br>
+                    <input type="submit" class="btn" id="change-btn" name="change-btn" value="Módosítás"> <br>
                 </fieldset>
-
-
-                
-            </div>
-        </form>
+            </form>
+        </div>
+        
     </main>
 
     <footer>

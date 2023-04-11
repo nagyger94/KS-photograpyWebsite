@@ -30,11 +30,11 @@
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
             <li><a href="arajanlat.php">Árajánlatkérés</a></li>
             <li>
-                <a href="">Ügyfeleinknek</a>
+                <a id="aktiv_oldal" href="">Ügyfeleinknek</a>
                 <ul>
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
-                        <li><a href="profile.php">Profilod</a></li>
+                        <li><a id="aktiv_oldal" href="profile.php">Profilod</a></li>
                         <li><a href="">Képeid</a></li>
                         <li><a href="">Vélemények</a></li>
                     <?php } else { ?>
@@ -63,7 +63,7 @@
             $users = loadUsers();
 
             foreach($users as $user){
-                if($user["username"] === $_SESSION["user"]["username"]){ //ide kell majd a bejelentkezett felhasználónevet dinamikusan berakni
+                if($user["username"] === $_SESSION["user"]["username"]){
                     $name = $user["name"];
                     $username= $user["username"];
                     $email = $user["email"];
@@ -86,7 +86,7 @@
                         <p>Email: ' .$email. '</p>
                         <p>Neme: '.$gender.'</p>
                     </div>
-                    <form method="GET" action="profile.php">
+                    <form method="GET" action="change-profile.php">
                         <input type="submit" class="btn" id="change-info" value="Módosítás" name="change-info">
                     </form>
                 </div>';

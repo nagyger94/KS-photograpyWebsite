@@ -44,6 +44,17 @@
         return $data;
     }
 
+    function changedDataToArray(){
+        $data = [];
+        foreach($_POST as $key => $value){
+            if($value !== ""){
+                $data[$key] = $value;
+            }
+        }
+        
+        return $data;
+    }
+
     function checkErrors($data, $users){
         $errors = [];
 
@@ -72,9 +83,35 @@
             $errors["jelszoMas"] = "A két jelszó nem egyezik!";
         }
 
+        if(isset($_FILES["avatar"])){
+            $kepAdatok = $_FILES["avatar"];
+            var_dump($kepAdatok);
+            $engedelyezett_kiterjesztesek = ["jpg", "jpeg", "png"];
+            $kiterjesztes = $kiterjesztes = strtolower(pathinfo($kepAdatok["name"], PATHINFO_EXTENSION));
+
+            if (in_array($kiterjesztes, $engedelyezett_kiterjesztesek)) {
+                if ($_FILES["profile-pic"]["error"] === 0) {
+                        //A felhasználó nevét használjuk az avatár elnevezéséhez
+                        $kepAdatok["name"] = $_SESSION["user"]["username"]."-avatar".$kiterjesztes;
+
+                        $cel = "../img/profile-pictures";
+
+                        if (move_uploaded_file($kepAdatok["name"], $cel)) {
+                            echo "Sikeres fájlfeltöltés! <br/>";
+                        } else {
+                            echo "Sikertelen fájlfeltöltés";
+                        }
+                } else{
+                    echo "<strong>Hiba:</strong>A fájlfeltöltés nem sikerült!<br/>";
+                }    
+            } else{
+                echo "<strong>Hiba:</strong>A fájl kiterjesztése nem megfelelő!<br/>";
+            }
+        }
+        
+
+
         return $errors;
     }
-    
-    
-    
+     
 ?>

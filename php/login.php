@@ -52,7 +52,7 @@
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
             <li><a id="login.php" href="arajanlat.php">Árajánlatkérés</a></li>
             <li>
-                <a href="">Ügyfeleinknek</a>
+                <a id="aktiv_oldal" href="">Ügyfeleinknek</a>
                 <ul>
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
@@ -60,7 +60,7 @@
                         <li><a href="">Képeid</a></li>
                         <li><a href="">Vélemények</a></li>
                     <?php } else { ?>
-                        <li><a href="login.php">Bejelentkezés</a></li>
+                        <li><a id="aktiv_oldal" href="login.php">Bejelentkezés</a></li>
                         <li><a href="signup.php">Regisztráció</a></li>
                     <?php } ?>
                 </ul>
