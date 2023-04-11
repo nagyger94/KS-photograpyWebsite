@@ -68,11 +68,14 @@
                         <p>Email: ' .$email. '</p>
                         <p>Neme: '.$gender.'</p>
                     </div>
+                    <form method="GET" action="profile.php">
+                        <input type="submit" class="btn" id="change-info" value="Módosítás" name="change-info">
+                    </form>
                 </div>';
                 
         ?>
             
-
+            
 
 
     </main>

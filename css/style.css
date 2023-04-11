@@ -375,27 +375,6 @@ h1{
     padding-top: 30px;
 }
 
-#profile_container{
-    width:50%;
-    margin:auto;
-    padding-top: 25px;
-    text-align: center;
-}
-
-#personal-info-container{
-    margin:auto;
-    width: 30%;
-    text-align: left;
-}
-
-#profile_container #avatar{
-    display:inline;
-    width: 30%;
-    min-width: 100px;
-    margin: auto;
-    padding:20px;
-}
-
 #studio_pic{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
@@ -766,4 +745,34 @@ h1{
     margin-bottom: 20px;
     margin-top: 0;
     color: red !important;
+}
+
+
+/*PROFIL*/
+
+#profile_container{
+    width:50%;
+    margin:auto;
+    padding: 25px 0px;
+    text-align: center;
+    
+}
+
+#personal-info-container{
+    margin:auto;
+    width: 30%;
+    text-align: left;
+}
+
+#profile_container #avatar{
+    display:inline;
+    width: 30%;
+    min-width: 100px;
+    max-width: 250px;
+    margin: auto;
+    padding:20px;
+}
+
+#change-info{
+    margin-top: 2%;
 }
