@@ -69,7 +69,7 @@
                         $users = loadUsers();
 
                         $newUser = dataToArray();
-                        $errors = checkErrors($newUser, $users);
+                        $errors = checkRegistrationErrors($newUser, $users);
 
                         if(count($errors) === 0){
                             unset($newUser["password2"]); //kitöröljük a nem hashelt jelszót biztonsági okokból

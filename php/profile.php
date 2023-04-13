@@ -72,15 +72,21 @@
                     } elseif($user["sex"] === "f") {
                         $gender = "nő";
                     }
-                    
+                    $avatarLocation = $_SESSION["avatar"];
+                    var_dump($avatarLocation);
                 }
             }
 
             echo '<div id="profile_container">
-                    <h2>'.$name.' profilja</h2>
-                    <img id="avatar" src="../img/profile-pictures/'.$gender.'-avatar.png" width=10% alt="Férfi avatar">
+                    <h2>'.$name.' profilja</h2>';
+                    if(isset($_SESSION["avatar"])){ //Ha manuálisan állítottunk profilképet
+                        
+                        echo '<img id="avatar" src="' .$avatarLocation.'" width=10% alt="Férfi avatar">';
+                    } else {
+                        echo '<img id="avatar" src="../img/profile-pictures/'.$gender.'-avatar.png" width=10% alt="Férfi avatar">';
+                    }
                     
-                    <div id="personal-info-container">
+            echo    '<div id="personal-info-container">
                         <p>Név: ' .$name. '</p>
                         <p>Felhasználónév: ' .$username. '</p>
                         <p>Email: ' .$email. '</p>
@@ -92,10 +98,6 @@
                 </div>';
                 
         ?>
-            
-            
-
-
     </main>
 
     <footer>

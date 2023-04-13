@@ -68,18 +68,21 @@
             require "form-methods.php";
             if(isset($_POST["change-btn"])){
                 $users = loadUsers();
+                $currentUser = findUser($users, $_SESSION["user"]["username"]);
 
                 $changedData = changedDataToArray();
-                $errors = checkErrors($changedData, $users);
+                $errors = checkChangedValues($changedData);
 
-                /*if(count($errors) === 0){
-                    unset($newUser["password2"]); //kitöröljük a nem hashelt jelszót biztonsági okokból
-                    $users[] = $newUser;
-                    saveUsers($users);
-                    $_SESSION["signup"] = true;
-                    header("Location:login.php");
-                }  */ 
-            }                
+                if(count($errors) === 0){
+                    $users = deleteUser($users, $_SESSION["user"]["username"]); //A régi adatokkal rendelkező felhasználót töröljük a tömbből
+                    $updatedUser = updatePersonalInfo($currentUser, $changedData); //A felhasználóhoz az új adatokat rendelünk
+                    $updatedUser["password1"] = password_hash($_POST["password1"], PASSWORD_DEFAULT); //Jelszó titkosítása
+                    unset($updatedUser["password2"]); //Ellenőrző jelszó törlése
+                    $users[] = $updatedUser; //A frissített felhasználót hozzáadjuk a tömbhöz
+                }
+
+                saveUsers($users);
+            }
         ?>
 
         <div class="urlap_container">
@@ -94,13 +97,6 @@
                                 echo '<p class="warning">' .$errors["name"] . "</p>";
                             }
                         ?>  
-
-                    <label>E-mail cím<input class="field" type="email" name="email" placeholder="E-mail"></label>
-                        <?php
-                            if(isset($errors["email"])){
-                                echo '<p class="warning">' .$errors["email"] . "</p>";
-                            }
-                        ?>
 
                     <label>Új jelszó<input class="field" type="password" name="password1" placeholder="A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!"></label> 
                         <?php
