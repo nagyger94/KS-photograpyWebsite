@@ -82,7 +82,7 @@
            <?php
                 if(isset($_SESSION["signup"])){
                     unset($_SESSION["signup"]);
-                    echo '<h2 id="signup_success_message"> Sikeres regisztráció! Kérlek, jelentkezz be!</h2>';
+                    echo '<h2 class="success_message"> Sikeres regisztráció! Kérlek, jelentkezz be!</h2>';
                 }
            ?>
 

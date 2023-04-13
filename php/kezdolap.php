@@ -59,9 +59,12 @@
 
     <main>
         <?php
-            if(isset($_SESSION["user"]["username"])){
+            var_dump($_GET);
+            if(isset($_GET["accept-delete-profile"])){
+                echo '<h2 class="success_message"> A profilod törlődött. Köszönjük, hogy igénybe vetted szolgáltatásunkat!</h2>';
+            } elseif(isset($_SESSION["user"]["username"])){
                 $nev = explode(" ", $_SESSION["user"]["name"]);
-                echo '<h2 id="login_success_message"> Sikeres bejelentkezés! Isten hozott '.$nev[1].'!</h2>';
+                echo '<h2 class="success_message"> Sikeres bejelentkezés! Isten hozott '.$nev[1].'!</h2>';
             }
         ?>
 

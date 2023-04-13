@@ -1,2 +1,1 @@
 a:6:{s:4:"name";s:11:"Nagy Tamás";s:8:"username";s:4:"tomi";s:5:"email";s:14:"tomi@gmail.com";s:9:"password1";s:60:"$2y$10$H9wDQaDwXgg/r6xPM6A5POBIjZBkDpk2wHJN6ifMt2WU/ZX2YJGsO";s:3:"sex";s:1:"m";s:6:"avatar";s:39:"../img/profile-pictures/tomi-avatar.png";}
-a:6:{s:4:"name";s:8:"Dil Emma";s:8:"username";s:4:"emma";s:5:"email";s:21:"emmuska4444@gmail.com";s:9:"password1";s:60:"$2y$10$7l5.O3q6wdzKSW88rCfkde4lLY8I9X8q7obV.24Fs3B2.nifWfAYS";s:3:"sex";s:1:"m";s:6:"avatar";s:39:"../img/profile-pictures/emma-avatar.png";}

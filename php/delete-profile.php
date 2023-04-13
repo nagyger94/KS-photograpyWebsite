@@ -60,49 +60,34 @@
         <?php
             require "form-methods.php";
 
-            $users = loadUsers();
+                $users = loadUsers();
 
-            foreach($users as $user){
-                if($user["username"] === $_SESSION["user"]["username"]){
-                    $name = $user["name"];
-                    $username= $user["username"];
-                    $email = $user["email"];
-                    if($user["sex"] === "m"){
-                        $gender = "férfi";
-                    } elseif($user["sex"] === "f") {
-                        $gender = "nő";
-                    }
-                    if(isset($_SESSION["avatar"])){
-                        $avatarLocation = $_SESSION["avatar"];
-                    }
+                if(isset($_GET["back-to-profile"])){
+                    header("Location: profile.php");
+                } else if(isset($_GET["accept-delete-profile"])){
+                    $users = deleteUser($users, $_SESSION["user"]["username"]);
+                    saveUsers($users);
+    
+                    session_unset();						// munkamenet kiürítése
+                    session_destroy();						// munkamenet törlése
+                    header("Location: kezdolap.php");
                 }
-            }
 
-            echo '<div id="profile_container">
-                    <h2>'.$name.' profilja</h2>';
-                    if(isset($_SESSION["avatar"])){ //Ha manuálisan állítottunk profilképet
-                        echo '<img id="avatar" src="' .$avatarLocation.'" width=10% alt="Férfi avatar">';
-                    } else {
-                        echo '<img id="avatar" src="../img/profile-pictures/'.$gender.'-avatar.png" width=10% alt="Férfi avatar">';
-                    }
-                    
-            echo    '<div id="personal-info-container">
-                        <p>Név: ' .$name. '</p>
-                        <p>Felhasználónév: ' .$username. '</p>
-                        <p>Email: ' .$email. '</p>
-                        <p>Neme: '.$gender.'</p>
-                    </div>
-                    <form method="GET" action="change-profile.php">
-                        <input type="submit" class="btn" id="change-info" value="Adat módosítása" name="change-info">
-                    </form>
-
-                    <form method="GET" action="delete-profile.php">
-                        <input type="submit" class="btn" id="delete-profile" value="Profil törlése" name="delete-profile">
-                    </form>
-                    
-                </div>';
-                
         ?>
+
+        <h1>Profil törlése</h1>
+        <hr class="decor_line">
+
+        <div id="profile_container">
+            <strong> Biztos törölni szeretnéd a profilodat? <br> A profil törlése végleges, így a jövőben újra kell regisztrálnod!</strong>
+            
+            <form action="delete-profile.php" method="GET" id="delete-form">
+                <input type="submit" class="btn" id="back-to-profile" value="Vissza a profilra" name="back-to-profile">
+                <input type="submit" class="btn" id="accept-delete-profile" value="Profil törlése" name="accept-delete-profile"> 
+            </form>
+                        
+        </div>
+
     </main>
 
     <footer>
