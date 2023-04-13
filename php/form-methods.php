@@ -64,7 +64,6 @@
         foreach($users as $user){
             if($username === $user["username"]){
                 unset($users[$index]);
-                echo 'Törlés sikerült!';
             } else {
                 $index++;
             }
@@ -154,13 +153,15 @@
             if(!preg_match('/[A-Z]/', $jelszo1) || !preg_match('/[0-9]/', $jelszo1)){
                 $errors["jelszoKar"] = "A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!";
             }
+
+            if(!($jelszo1 === $jelszo2)){
+                $errors["jelszoMas"] = "A két jelszó nem egyezik!";
+            }
         }
 
         if(!($_FILES["avatar"]["size"] === 0)){ //a file mérete nem nulla, vagyis van feltöltve fájl
             $imgName = saveAvatar();
             $_SESSION["avatar"] = "../img/profile-pictures/" .$imgName;
-
-            var_dump($_SESSION["avatar"]);
         }
 
         return $errors;
@@ -171,7 +172,6 @@
             $user[$key] = $value;
         }
 
-        echo 'Az adatok frissítve lettek!';
         return $user;
     }
 
@@ -180,7 +180,6 @@
             $kepAdatok = $_FILES["avatar"];
             $engedelyezett_kiterjesztesek = ["jpg", "jpeg", "png"];
             $kiterjesztes = $kiterjesztes = strtolower(pathinfo($kepAdatok["name"], PATHINFO_EXTENSION));
-            var_dump($kiterjesztes);
 
             if (in_array($kiterjesztes, $engedelyezett_kiterjesztesek)) {
                 if ($kepAdatok["error"] === 0) {

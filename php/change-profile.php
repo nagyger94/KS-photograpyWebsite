@@ -79,9 +79,10 @@
                     $updatedUser["password1"] = password_hash($_POST["password1"], PASSWORD_DEFAULT); //Jelszó titkosítása
                     unset($updatedUser["password2"]); //Ellenőrző jelszó törlése
                     $users[] = $updatedUser; //A frissített felhasználót hozzáadjuk a tömbhöz
-                }
 
-                saveUsers($users);
+                    saveUsers($users);
+                    header("Location: profile.php");
+                }
             }
         ?>
 
