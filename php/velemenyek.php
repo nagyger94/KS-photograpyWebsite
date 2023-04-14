@@ -73,11 +73,9 @@
         </div>
         </form>
 
-        <?php
-           
-           $text = $_GET["comment"];
-            $final_comment = trim(preg_replace('/\s\s+/',' ', $text));
-            echo var_dump($final_comment);
+        $text = $_GET["message"];
+            $comment = trim(preg_replace('/\s\s+/',' ', $text));
+            echo var_dump($comment);
             echo var_dump($text);
 
            if(isset($_GET["post"])) {
@@ -86,23 +84,20 @@
                 $NewComment = dataToComment();
                 
                 $comments[] = $NewComment;
-                SaveComment($final_comment);
+                SaveComment($comments);
            }
         
             $comments = LoadComment();
-            foreach($comments as $final_comment){
+            foreach($comments as $comment){
                 //if ($comment["comment"] === $text) { ?>
             <div class="comment-box">
-                <h2><?php echo $final_comment["name"] ?></h2>
+                <h2><?php echo $comment["name"] ?></h2>
                 <div class="kommnev"></div>
                 <div class="datum"><?php date_default_timezone_set("Europe/Budapest") ?></div>
-                <div class="komment"><?php echo $final_comment["comment"]; ?></div>
+                <div class="komment"><?php echo $comment["message"]; ?></div>
             </div>
                 <?php  } ?>
                  
-
-        
-
 
 
         </main>
