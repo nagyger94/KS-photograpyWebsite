@@ -219,7 +219,7 @@
     function dataToComment() {
         $datacomm = [
             "name" => $_SESSION["user"]["username"],
-            "comment" => $_GET["comment"],
+            "message" => $_GET["message"],
         ];
         return $datacomm;
     }
@@ -239,5 +239,6 @@
         fclose($file);
         return $comments;           
     }
+    
      
 ?>
