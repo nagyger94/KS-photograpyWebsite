@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 a:2:{s:4:"name";s:4:"emma";s:7:"message";s:3:"ASD";}
 a:2:{s:4:"name";s:4:"emma";s:7:"message";s:5:"kutya";}
 a:2:{s:4:"name";s:4:"emma";s:7:"message";s:6:"macska";}
 a:2:{s:4:"name";s:4:"emma";s:7:"message";s:9:"kismadár";}
 a:2:{s:4:"name";s:4:"emma";s:7:"message";s:10:"pisti kati";}
 a:2:{s:4:"name";s:4:"emma";s:7:"message";s:31:"kasdk123 asdk 213dxcy o31 k,jfa";}
+=======
+a:2:{s:4:"name";s:4:"mama";s:7:"message";s:10:"teve
+teve";}
+>>>>>>> 49b1fa474f93fb71582a8fc05b9c14d104a7ac45
