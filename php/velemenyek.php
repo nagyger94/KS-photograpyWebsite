@@ -103,7 +103,7 @@
                 <div class="datum"><?php date_default_timezone_set("Europe/Budapest") ?></div>
                 <div class="komment"><?php echo $comment["message"]; ?></div>
             </div>
-                <?php  } ?>
+                <?php ?>
                  
 
 
