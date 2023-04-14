@@ -204,6 +204,40 @@
         return $kepAdatok["name"];
     }
 
-    
+    function SaveComment($comments){
+        $file = fopen("../data/comment.txt", "w");
+        if ($file === FALSE){
+            die("HIBA: A fájl megnyitása nem sikerült!");
+        }
+        foreach($comments as $comment) {
+            $serialized_comment = serialize($comment);
+            fwrite($file, $serialized_comment . "\n");
+        }
+        fclose($file);
+    }
+
+    function dataToComment() {
+        $datacomm = [
+            "name" => $_SESSION["user"]["username"],
+            "comment" => $_GET["comment"],
+        ];
+        return $datacomm;
+    }
+
+    function LoadComment(){
+        $comments = [];
+
+        $file = fopen("../data/comment.txt", "r");
+        if ($file === FALSE)  
+            die("HIBA: A fájl megnyitása nem sikerült!");
+
+        while (($szoveg = fgets($file)) !== FALSE) {
+            $comment = unserialize($szoveg);
+            $comments[] = $comment;
+        }
+
+        fclose($file);
+        return $comments;           
+    }
      
 ?>
