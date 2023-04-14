@@ -1,0 +1,6 @@
+a:2:{s:4:"name";s:4:"emma";s:7:"message";s:3:"ASD";}
+a:2:{s:4:"name";s:4:"emma";s:7:"message";s:5:"kutya";}
+a:2:{s:4:"name";s:4:"emma";s:7:"message";s:6:"macska";}
+a:2:{s:4:"name";s:4:"emma";s:7:"message";s:9:"kismadár";}
+a:2:{s:4:"name";s:4:"emma";s:7:"message";s:10:"pisti kati";}
+a:2:{s:4:"name";s:4:"emma";s:7:"message";s:31:"kasdk123 asdk 213dxcy o31 k,jfa";}

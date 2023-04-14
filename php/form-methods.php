@@ -209,17 +209,19 @@
         if ($file === FALSE){
             die("HIBA: A fájl megnyitása nem sikerült!");
         }
+
         foreach($comments as $comment) {
             $serialized_comment = serialize($comment);
             fwrite($file, $serialized_comment . "\n");
         }
+
         fclose($file);
     }
 
-    function dataToComment() {
+    function dataToComment($comment) {
         $datacomm = [
             "name" => $_SESSION["user"]["username"],
-            "message" => $_GET["message"],
+            "message" => $comment,
         ];
         return $datacomm;
     }
@@ -238,7 +240,6 @@
 
         fclose($file);
         return $comments;           
-    }
-    
+    }    
      
 ?>
