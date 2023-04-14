@@ -16,6 +16,8 @@
             if ($user["username"] === $felhasznalonev && password_verify($jelszo, $user["password1"])) {
                             
             echo '<script>alert("Sikeres belépés!")</script>';
+
+            setcookie("first_sign_up", true);
             $_SESSION["user"] = $user;
             header("Location:kezdolap.php");
             }

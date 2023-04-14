@@ -62,12 +62,13 @@
 
                 $users = loadUsers();
 
-                if(isset($_GET["back-to-profile"])){
+                if(isset($_POST["back-to-profile"])){
                     header("Location: profile.php");
-                } else if(isset($_GET["accept-delete-profile"])){
+                } else if(isset($_POST["accept-delete-profile"])){
                     $users = deleteUser($users, $_SESSION["user"]["username"]);
                     saveUsers($users);
-    
+                    setcookie("deleted-profile", true);
+
                     session_unset();						// munkamenet kiürítése
                     session_destroy();						// munkamenet törlése
                     header("Location: kezdolap.php");
@@ -81,7 +82,7 @@
         <div id="profile_container">
             <strong> Biztos törölni szeretnéd a profilodat? <br> A profil törlése végleges, így a jövőben újra kell regisztrálnod!</strong>
             
-            <form action="delete-profile.php" method="GET" id="delete-form">
+            <form action="delete-profile.php" method="POST" id="delete-form">
                 <input type="submit" class="btn" id="back-to-profile" value="Vissza a profilra" name="back-to-profile">
                 <input type="submit" class="btn" id="accept-delete-profile" value="Profil törlése" name="accept-delete-profile"> 
             </form>

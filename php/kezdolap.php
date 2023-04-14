@@ -59,10 +59,11 @@
 
     <main>
         <?php
-            var_dump($_GET);
-            if(isset($_GET["accept-delete-profile"])){
+            if(isset($_COOKIE["deleted-profile"])){
+                setcookie("deleted-profile", true, time() - 3600); //kiírás után nincs szükségünk a cookie-ra
                 echo '<h2 class="success_message"> A profilod törlődött. Köszönjük, hogy igénybe vetted szolgáltatásunkat!</h2>';
-            } elseif(isset($_SESSION["user"]["username"])){
+            } elseif(isset($_SESSION["user"]["username"]) && isset($_COOKIE["first_sign_up"])){
+                setcookie("first_sign_up", true, time() - 3600);
                 $nev = explode(" ", $_SESSION["user"]["name"]);
                 echo '<h2 class="success_message"> Sikeres bejelentkezés! Isten hozott '.$nev[1].'!</h2>';
             }
