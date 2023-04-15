@@ -81,32 +81,25 @@
                </form>
 
             <?php
-                
-                if(isset($users_GET["slide"])){
-                    $rate_value = $_GET["slide"];
-                }
-                
-
+          
                 if(isset($_GET["comment"])){
                     $text = $_GET["comment"];
-                    //$comment = str_replace("\n", " ", $text);
                     $comment = trim(preg_replace('/\s\s+/',' ', $text));
-
-                    //echo var_dump($comment);
                 }
 
                 if(isset($_GET["post"])) {
-                    $rate_value = $_GET["slide"];
-                    echo var_dump($rate_value);
+
                     $ido = time();
                     date_default_timezone_set("Europe/Budapest");
                     $date_time = date("d-m-Y (D) H:i:s", $ido);
                     
                     $comments = LoadComment();
-                    $NewComment = dataToComment($comment, $date_time, $rate_value);
-                        
+                    $NewComment = dataToComment($comment, $date_time);
+                    
                     $comments[] = $NewComment;
+                    
                     SaveComment($comments);
+                    
                 }
                 
                 $comments = LoadComment();
@@ -114,10 +107,10 @@
             ?>
         
             <div class="comment-box">
-                <div href="" class="kommnev"><?php echo $comment["name"] ?></div>
+                <div class="kommnev"><?php echo $comment["name"] ?></div>
                 <div class="komment"><?php echo $comment["message"]; ?></div>
                 <div class="datum"><?php echo $comment["date"]?></div>
-                <div calss="ertekeles"><?php echo $comment["ertek"]?></div>
+                <div class="ertekeles"><?php echo "Értékelése: 5/".$comment["ertek"]?></div>
             </div>
                 <?php } ?> 
          
