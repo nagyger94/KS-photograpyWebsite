@@ -99,7 +99,8 @@
         }
 
         if(isset($_FILES["avatar"])){ //Ha képet is cseréltünk
-            $data["avatar"] = "../img/profile-pictures/" .$_SESSION["user"]["username"]. "-avatar.png";
+            $kiterjesztes = $kiterjesztes = strtolower(pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION));
+            $data["avatar"] = "../img/profile-pictures/" .$_SESSION["user"]["username"]. "-avatar.$kiterjesztes";
         }
 
         unset($data["change-btn"]); //a submit gombot nem kell belerakni :)

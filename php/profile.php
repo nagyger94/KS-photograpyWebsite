@@ -74,14 +74,16 @@
                     }
                     if(isset($_SESSION["avatar"])){
                         $avatarLocation = $_SESSION["avatar"];
+                    } else{
+                        $avatarLocation = $user["avatar"];
                     }
                 }
             }
 
             echo '<div id="profile_container">
                     <h2>'.$name.' profilja</h2>';
-                    if(isset($_SESSION["avatar"])){ //Ha manuálisan állítottunk profilképet
-                        echo '<img id="avatar" src="' .$avatarLocation.'" width=10% alt="Férfi avatar">';
+                    if(file_exists($avatarLocation)){ //Ha manuálisan állítottunk profilképet
+                        echo '<img id="avatar" src="' .$avatarLocation.'" width=10% alt="Egyedi avatar">';
                     } else {
                         echo '<img id="avatar" src="../img/profile-pictures/'.$gender.'-avatar.png" width=10% alt="Férfi avatar">';
                     }
