@@ -782,3 +782,81 @@ h1{
     padding-top: 50px;
     color:#000000;
 }
+
+/*Velemenyek*/
+
+.comment-box{
+    background-color: #e2d6da;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+    margin: 50px;
+    position: relative ;
+    bottom:0; 
+    left: 22%; 
+    right: 0;
+}
+
+.comment-box .kommnev{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.comment-box .komment{
+    font-size: 16px;
+    text-align: justify;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-box .datum{
+    font-size: 16px;
+    text-align: right;
+    
+}
+
+.urlap_container .slider {
+    position: absolute;
+    top: 70%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 60px;
+    padding: 40px;
+    background: #b58f9a;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.urlap_container .slider p{
+    font-size: 20px;
+    font-weight: 400px;
+    padding-left: 30px;
+    color: rgb(0, 0, 0);
+}
+
+.urlap_container .slider input[type="range"] {
+    width: 420px;
+    height: 2px;
+    background: black;
+    border: none;
+    outline: none;
+}
+
+.urlap_container .slider input[type="range"]::-webkit-slider-thumb {
+    width: 30px;
+    height:30px;
+    background: black;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.urlap_container .slider .slidertext{
+ text-align: justify;
+}
