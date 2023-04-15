@@ -747,6 +747,14 @@ h1{
     color: red !important;
 }
 
+.fieldset-change{
+    margin-bottom: 20px;
+}
+
+.visibility-container{
+    padding-bottom: 10px;
+}
+
 
 /*PROFIL*/
 

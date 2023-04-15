@@ -88,12 +88,23 @@
                         echo '<img id="avatar" src="../img/profile-pictures/'.$gender.'-avatar.png" width=10% alt="Férfi avatar">';
                     }
                     
-            echo    '<div id="personal-info-container">
-                        <p>Név: ' .$name. '</p>
-                        <p>Felhasználónév: ' .$username. '</p>
-                        <p>Email: ' .$email. '</p>
-                        <p>Neme: '.$gender.'</p>
-                    </div>
+            echo    '<div id="personal-info-container">';
+
+            if($_COOKIE["nameVisibility"] === "true" || $_COOKIE["nameVisibility"] === "1"){
+                echo ' <p>Név: ' .$name. '</p>';
+            }
+                       
+            echo '<p>Felhasználónév: ' .$username. '</p>';
+
+            if($_COOKIE["emailVisibility"] === "true" || $_COOKIE["emailVisibility"] === "1"){
+                echo '<p>Email: ' .$email. '</p>';
+            }
+
+            if($_COOKIE["sexVisibility"] === "true" || $_COOKIE["sexVisibility"] === "1"){
+                echo '<p>Neme: '.$gender.'</p>';
+            }
+                  
+            echo    '</div>
                     <form method="GET" action="change-profile.php">
                         <input type="submit" class="btn" id="change-info" value="Adat módosítása" name="change-info">
                     </form>

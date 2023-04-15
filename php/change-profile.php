@@ -82,6 +82,10 @@
 
                     saveUsers($users);
                     header("Location: profile.php");
+
+                    setcookie("nameVisibility", $_POST["nameVisibility"]);
+                    setcookie("emailVisibility", $_POST["emailVisibility"]);
+                    setcookie("sexVisibility", $_POST["sexVisibility"]);
                 }
             }
         ?>
@@ -89,7 +93,7 @@
         <div class="urlap_container">
             <form action="change-profile.php" method="POST" enctype="multipart/form-data">
 
-                <fieldset>
+                <fieldset class="fieldset-change">
                     <legend>Személyes adatok</legend>
 
                     <label>Név<input class="field" type="text" name="name" placeholder="Vezeték- és keresztnév"></label>
@@ -123,9 +127,39 @@
                     <label>Profilkép feltöltése: </label>
                     <input type="file" name="avatar" id="avatar" accept="image/*">
                     <br>
-
-                    <input type="submit" class="btn" id="change-btn" name="change-btn" value="Módosítás"> <br>
                 </fieldset>
+
+                <fieldset class="fieldset-change">
+                    <legend>Személyes információk láthatósága</legend>
+
+                    <div class="visibility-container">
+                        <label>Név:</label> <br>
+                        <label>Látható:</label>
+                        <input type="radio" id="nameVisibility" name="nameVisibility" value="true" checked>
+                        <label>Rejtett:</label>
+                        <input type="radio" id="nameVisibility" name="nameVisibility" value="false">
+                    </div>
+
+                    <div class="visibility-container">
+                        <label>Email:</label> <br>
+                        <label>Látható:</label>
+                        <input type="radio" id="emailVisibility" name="emailVisibility" value=true checked>
+                        <label>Rejtett:</label>
+                        <input type="radio" id="emailVisibility" name="emailVisibility" value="true">
+                    </div>
+
+                    <div class="visibility-container">
+                        <label>Nemed:</label> <br>
+                        <label>Látható:</label>
+                        <input type="radio" id="sexVisibility" name="sexVisibility" value="true" checked>
+                        <label>Rejtett:</label>
+                        <input type="radio" id="sexVisibility" name="sexVisibility" value="false">
+                    </div>
+                </fieldset>
+
+                <div .class="button-container">
+                    <input type="submit" class="btn" id="change-btn" name="change-btn" value="Módosítás"> <br>
+                </div>
             </form>
         </div>
         

@@ -76,6 +76,12 @@
                             $users[] = $newUser;
                             saveUsers($users);
                             $_SESSION["signup"] = true;
+
+                            //Láthatósági beállítások
+                            setcookie("nameVisibility", true);
+                            setcookie("emailVisibility", true);
+                            setcookie("sexVisibility", true);
+
                             header("Location:login.php");
                         }   
                     }                
