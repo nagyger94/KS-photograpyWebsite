@@ -1,7 +1,6 @@
 <?php
   session_start();
-  include "form-methods.php"; 
-  $users = loadUsers();
+  include "form-methods.php";
 ?>
 
 <!DOCTYPE html>
@@ -65,51 +64,28 @@
                     <hr class="decor_line">
             </article>
             </div>
-
-          <form action="" method="GET">
-        <div class="urlap_container">
-            <textarea cols="40" rows="5" class="field" name="comment" placeholder="Write Your Message Here...." required></textarea>
-            <p id="message">Rate Your Experience:</p>
-                <form class="form-check">
-                    <div class="rate">
-                        <div class="">            
-                            <input type="radio" name="rating" id="5" value="5">
-                            <label for="5"></label>
-                            <span class="number">5</span>
-                        </div>
-                        <div class="">            
-                            <input type="radio" name="rating" id="4" value="4">
-                            <label for="5"></label>
-                            <span class="number">4</span>
-                        </div>
-                        <div class="">            
-                            <input type="radio" name="rating" id="3" value="3">
-                            <label for="5"></label>
-                            <span class="number">3</span>
-                        </div>
-                        <div class="">            
-                            <input type="radio" name="rating" id="2" value="2">
-                            <label for="5"></label>
-                            <span class="number">2</span>
-                        </div>
-                        <div class="">            
-                            <input type="radio" name="rating" id="1" value="1">
-                            <label for="5"></label>
-                            <span class="number">1</span>
-                        </div>
-                
+                <form action="" method="GET">
+                  <div class="urlap_container">
+                    <textarea cols="40" rows="5" class="field" name="comment" placeholder="Write Your Message Here...." required></textarea>
+           
+                    <div class="slider">
+                        <p class="slidertext">Értékelj:</p>
+                        <input type="range" min="1" max="5" step="1" value="5" id="slide" name="slide" oninput="rangeValue.innerText = this.value">
+                        <p id="rangeValue">5</p>
+                        
                     </div>
+                    <output name="value"></output>
+                    <input type="submit" class="btn" name="post" value="Post">
+                </div>
                     
-                </form>
-            <input type="submit" class="btn" name="post" value="Post">
-        </div>
-        </form>
+               </form>
 
             <?php
-                if(isset($users_GET["rating"])){
-                    $rate_value = $_GET["value"];
+                
+                if(isset($users_GET["slide"])){
+                    $rate_value = $_GET["slide"];
                 }
-                echo var_dump($rate_value);
+                
 
                 if(isset($_GET["comment"])){
                     $text = $_GET["comment"];
@@ -120,13 +96,14 @@
                 }
 
                 if(isset($_GET["post"])) {
+                    $rate_value = $_GET["slide"];
                     echo var_dump($rate_value);
                     $ido = time();
                     date_default_timezone_set("Europe/Budapest");
                     $date_time = date("d-m-Y (D) H:i:s", $ido);
                     
                     $comments = LoadComment();
-                    $NewComment = dataToComment($comment,$date_time,$rate_value);
+                    $NewComment = dataToComment($comment, $date_time, $rate_value);
                         
                     $comments[] = $NewComment;
                     SaveComment($comments);
@@ -140,11 +117,10 @@
                 <div href="" class="kommnev"><?php echo $comment["name"] ?></div>
                 <div class="komment"><?php echo $comment["message"]; ?></div>
                 <div class="datum"><?php echo $comment["date"]?></div>
-                <div calss="ertekeles"><?php echo $comment["name"]?></div>
+                <div calss="ertekeles"><?php echo $comment["ertek"]?></div>
             </div>
                 <?php } ?> 
- 
-          
+         
         </main>
     
         <footer>
