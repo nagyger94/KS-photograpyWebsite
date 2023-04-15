@@ -1,7 +1,6 @@
 <?php
   session_start();
-  include "form-methods.php"; 
-  $users = loadUsers();
+  include "form-methods.php";
 ?>
 
 <!DOCTYPE html>
@@ -65,48 +64,63 @@
                     <hr class="decor_line">
             </article>
             </div>
-
-        <form action="" method="GET">
-        <div class="urlap_container">
-            <textarea cols="40" rows="5" class="field" name="comment" placeholder="Write Your Message Here...." required></textarea>
-            <input type="submit" class="btn" name="post" value="Post">
-        </div>
-        </form>
+                <form action="" method="GET">
+                  <div class="urlap_container">
+                    <textarea cols="40" rows="5" class="field" name="comment" placeholder="Write Your Message Here...." required></textarea>
+           
+                    <div class="slider">
+                        <p class="slidertext">Értékelj:</p>
+                        <input type="range" min="1" max="5" step="1" value="5" id="slide" name="slide" oninput="rangeValue.innerText = this.value">
+                        <p id="rangeValue">5</p>
+                        
+                    </div>
+                    <output name="value"></output>
+                    <input type="submit" class="btn" name="post" value="Post">
+                </div>
+                    
+               </form>
 
             <?php
+                
+                if(isset($users_GET["slide"])){
+                    $rate_value = $_GET["slide"];
+                }
+                
+
                 if(isset($_GET["comment"])){
                     $text = $_GET["comment"];
                     //$comment = str_replace("\n", " ", $text);
                     $comment = trim(preg_replace('/\s\s+/',' ', $text));
 
-                    echo var_dump($text);
-                    echo var_dump($comment);
+                    //echo var_dump($comment);
                 }
 
                 if(isset($_GET["post"])) {
+                    $rate_value = $_GET["slide"];
+                    echo var_dump($rate_value);
+                    $ido = time();
+                    date_default_timezone_set("Europe/Budapest");
+                    $date_time = date("d-m-Y (D) H:i:s", $ido);
                     
-                        $comments = LoadComment();
-                        $NewComment = dataToComment($comment);
+                    $comments = LoadComment();
+                    $NewComment = dataToComment($comment, $date_time, $rate_value);
                         
-                        $comments[] = $NewComment;
-                        SaveComment($comments);
+                    $comments[] = $NewComment;
+                    SaveComment($comments);
                 }
-            
+                
                 $comments = LoadComment();
                 foreach($comments as $comment){
-                    //if ($comment["comment"] === $text) {
             ?>
         
             <div class="comment-box">
-                <h2><?php echo $comment["name"] ?></h2>
-                <div class="kommnev"></div>
-                <div class="datum"><?php date_default_timezone_set("Europe/Budapest") ?></div>
+                <div href="" class="kommnev"><?php echo $comment["name"] ?></div>
                 <div class="komment"><?php echo $comment["message"]; ?></div>
+                <div class="datum"><?php echo $comment["date"]?></div>
+                <div calss="ertekeles"><?php echo $comment["ertek"]?></div>
             </div>
-                <?php ?>
-                 
-
-
+                <?php } ?> 
+         
         </main>
     
         <footer>
