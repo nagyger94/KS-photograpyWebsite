@@ -224,12 +224,12 @@
         fclose($file);
     }
 
-    function dataToComment($comment, $date_time, $rate_value) {
+    function dataToComment($comment, $date_time) {
         $datacomm = [
             "name" => $_SESSION["user"]["username"],
             "message" => $comment,
             "date" => $date_time,
-            "ertek" => $rate_value,
+            "ertek" => $_GET["slide"],
         ];
         return $datacomm;
     }
