@@ -70,13 +70,13 @@
                 $users = loadUsers();
                 $currentUser = findUser($users, $_SESSION["user"]["username"]);
 
-                $changedData = changedDataToArray();
+                $changedData = changedDataToArray($currentUser);
                 $errors = checkChangedValues($changedData);
 
                 if(count($errors) === 0){
                     $users = deleteUser($users, $_SESSION["user"]["username"]); //A régi adatokkal rendelkező felhasználót töröljük a tömbből
                     $updatedUser = updatePersonalInfo($currentUser, $changedData); //A felhasználóhoz az új adatokat rendelünk
-                    $updatedUser["password1"] = password_hash($_POST["password1"], PASSWORD_DEFAULT); //Jelszó titkosítása
+                    $updatedUser["password1"] = $_POST["password1"]; //Jelszó titkosítása
                     unset($updatedUser["password2"]); //Ellenőrző jelszó törlése
                     $users[] = $updatedUser; //A frissített felhasználót hozzáadjuk a tömbhöz
 

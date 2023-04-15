@@ -77,7 +77,7 @@
             "name" => $_POST["name"],
             "username" => $_POST["username"],
             "email" => $_POST["email"],
-            "password1" => password_hash($_POST["password1"], PASSWORD_DEFAULT),
+            "password1" => password_hash($_POST["password1"], PASSWORD_DEFAULT) ,
             "password2" => $_POST["password2"], //Azért csak az egyiken használom a hash metódust, hogy az ellenőrzéskor a másikat tudjam "plain text" használni.
             "sex" => $_POST["sex"],
             "avatar" => "../img/profile-pictures/" .$username. "-avatar"
@@ -85,8 +85,13 @@
         return $data;
     }
 
-    function changedDataToArray(){
+    function changedDataToArray($user){
         $data = [];
+
+        if($_POST["password1"] === ""){
+            $_POST["password1"] = $user["password1"];
+        }
+        
         foreach($_POST as $key => $value){
             if($value !== ""){
                 $data[$key] = $value;
@@ -129,7 +134,7 @@
             $errors["jelszoKar"] = "A jelszónak tartalmazni kell legalább egy nagy betűt és egy számot!";
         }
 
-        if(!password_verify($jelszo, $data["password1"])){
+        if(!(password_verify($jelszo, $data["password1"]))){
             $errors["jelszoMas"] = "A két jelszó nem egyezik!";
         }
 
@@ -171,7 +176,7 @@
         foreach($changedData as $key => $value){
             $user[$key] = $value;
         }
-
+ 
         return $user;
     }
 

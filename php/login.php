@@ -13,7 +13,7 @@
             echo '<script>alert("Sikertelen belépés! A belépési adatok nem megfelelők!")</script>';
 
         foreach ($users as $user) {              
-            if ($user["username"] === $felhasznalonev && password_verify($jelszo, $user["password1"])) {
+            if ($user["username"] === $felhasznalonev && (password_verify($jelszo, $user["password1"]))) {
                             
             echo '<script>alert("Sikeres belépés!")</script>';
 
