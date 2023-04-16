@@ -99,7 +99,7 @@
         }
 
         if(isset($_FILES["avatar"])){ //Ha képet is cseréltünk
-            $kiterjesztes = $kiterjesztes = strtolower(pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION));
+            $kiterjesztes = strtolower(pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION));
             $data["avatar"] = "../img/profile-pictures/" .$_SESSION["user"]["username"]. "-avatar.$kiterjesztes";
         }
 

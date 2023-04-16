@@ -72,6 +72,7 @@
                     } elseif($user["sex"] === "f") {
                         $gender = "nő";
                     }
+
                     if(isset($_SESSION["avatar"])){
                         $avatarLocation = $_SESSION["avatar"];
                     } else{
