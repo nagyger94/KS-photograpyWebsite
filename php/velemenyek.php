@@ -106,8 +106,8 @@
             ?>
         
             <div class="comment-box">
-                <div class="kommnev"><?php echo '<a href="profile.php">'.$comment["name"].'</a>'?></div>
-                <div class="komment"><?php echo $comment["message"]; ?></div>
+                <div class="kommnev"><?php echo $comment["name"]?></div>
+                <div class="komment"><?php echo $comment["message"]?></div>
                 <div class="datum"><?php echo $comment["date"]?></div>
                 <div class="ertekeles"><?php echo "Értékelése: 5/".$comment["ertek"]?></div>
             </div>
