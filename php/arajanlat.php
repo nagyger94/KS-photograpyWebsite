@@ -113,9 +113,6 @@
                         <input type="radio" id="op1" name="sex" value="m">
                         <label for="op2">Nő:</label>
                         <input type="radio" id="op2" name="sex" value="f">
-                        <label for="op3">Egyéb:</label>
-                        <input type="radio" id="op3" name="sex" value="other" checked>
-
                     
                         <textarea class="field" rows="8" maxlength="200" name="message" placeholder="Uzenet (max 200 karatker)"></textarea> 
                     </fieldset>
