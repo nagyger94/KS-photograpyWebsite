@@ -77,6 +77,12 @@
                     } else{
                         $avatarLocation = $user["avatar"];
                     }
+
+                    if(isset($user["nameVisibility"])){
+                        $_SESSION["nameVisibility"] = $user["nameVisibility"];
+                        $_SESSION["emailVisibility"] = $user["emailVisibility"];
+                        $_SESSION["sexVisibility"] = $user["sexVisibility"];
+                    }
                     
                 }
             }
@@ -90,17 +96,17 @@
                     }
                     
             echo    '<div id="personal-info-container">';
-            if($_COOKIE["nameVisibility"] === "true" || $_COOKIE["nameVisibility"] === "1"){
+            if($_SESSION["nameVisibility"] === "true"){
                 echo ' <p>Név: ' .$name. '</p>';
             }
                        
             echo '<p>Felhasználónév: ' .$username. '</p>';
 
-            if($_COOKIE["emailVisibility"] === "true" || $_COOKIE["emailVisibility"] === "1"){
+            if($_SESSION["emailVisibility"] === "true"){
                 echo '<p>Email: ' .$email. '</p>';
             }
 
-            if($_COOKIE["sexVisibility"] === "true" || $_COOKIE["sexVisibility"] === "1"){
+            if($_SESSION["sexVisibility"] === "true"){
                 echo '<p>Neme: '.$gender.'</p>';
             }
                   

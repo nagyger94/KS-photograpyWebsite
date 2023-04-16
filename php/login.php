@@ -19,16 +19,13 @@
 
             setcookie("first_sign_up", true);
             
-
-            if(!(isset($_COOKIE["nameVisibility"]))){   //ez az első bejelentkezés a böngészőben
-                setcookie("nameVisibility", true);
-                setcookie("emailVisibility", true);
-                setcookie("sexVisibility", true);
-            } else {                                // vagy már vannak beállított értékek a profilban
-                setcookie("nameVisibility", $user["nameVisibility"]);
-                setcookie("emailVisibility", $user["emailVisibility"]);
-                setcookie("sexVisibility", $user["sexVisibility"]);
-            }
+            var_dump(!(isset($_SESSION["nameVisibility"])));
+            if(!(isset($_SESSION["nameVisibility"]))){   //ez az első bejelentkezés a böngészőben
+                $_SESSION["nameVisibility"] = "true";
+                $_SESSION["emailVisibility"] = "true";
+                $_SESSION["sexVisibility"] = "true";
+            } 
+            var_dump($_SESSION);
 
             $_SESSION["user"] = $user;
             header("Location:kezdolap.php");

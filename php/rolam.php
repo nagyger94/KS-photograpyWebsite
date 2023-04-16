@@ -101,7 +101,7 @@
                 <a href="#borito_kontener"><img src="../img/kapcsolat/nyil.png" alt="Az oldal tetejére" title="Az oldal tetejére"></a>
             </div>
     
-            <div id="hirlevel" class="footer_oszlop">
+        <div id="hirlevel" class="footer_oszlop">
             <h2>Iratkozz fel hírlevelünkre:</h2>
             <form action="rolam.php" method="POST">
                 <label for="footer_input">Email:</label>

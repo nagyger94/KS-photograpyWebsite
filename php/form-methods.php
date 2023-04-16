@@ -250,4 +250,42 @@
         return $comments;           
     }    
      
+
+    function savePriceOffer($offers){
+        $file = fopen("../data/priceoffer.txt", "w");
+        if ($file === FALSE){
+            die("HIBA: A fájl megnyitása nem sikerült!");
+        }
+
+        foreach($offers as $offer) {
+            $serialized_offer = serialize($offer);
+            fwrite($file, $serialized_offer . "\n");
+        }
+
+        fclose($file);
+    }
+
+    function loadOffers(){
+        $offers = [];
+
+        $file = fopen("../data/priceoffer.txt", "r");
+        if ($file === FALSE)  
+            die("HIBA: A fájl megnyitása nem sikerült!");
+
+        while (($szoveg = fgets($file)) !== FALSE) {
+            $offer = unserialize($szoveg);
+            $offers[] = $offer;
+        }
+
+        fclose($file);
+        return $offers;           
+    } 
+    
+    function offerToArray(){
+        unset($_POST["adatkezeles"]);
+        unset($_POST["submit-offer-btn"]);
+
+        $offer[] = $_POST;
+        return $offer;
+    }
 ?>

@@ -1,6 +1,16 @@
-<?php
-  session_start();
-?>
+    <?php
+        session_start();
+
+        require "form-methods.php";
+        if(isset($_POST["submit-offer-btn"])){
+            $offers = loadOffers();
+
+            $newOffer = offerToArray();
+            $offers[] = $newOffer;
+            savePriceOffer($offers);  
+            setcookie("offerSuccess", "true");
+        } 
+    ?>
 
 <!DOCTYPE html>
 <html lang="hu">
@@ -62,6 +72,13 @@
             <hr class="decor_line">
         </div>
 
+        <?php
+            if(isset($_COOKIE["offerSuccess"])){
+                echo '<h3 class="success_message">Az űrlap kitöltése sikeres volt! Hamarosan válaszolunk emailben! </h3>';
+                setcookie("offerSuccess", "", time() - 3600);
+            }
+        ?>
+
         <div class="rovid_leiras_arajanlat">
                 <p>Az alábbi űrlap kitöltésével egyszerűen kérhetsz árajánlatot a felsorolt szolgáltatások bármelyikére.</p>
                 <p>Kérlek amennyiben nem találod ezek között azt a szolgáltatást, amelyikre szükséged lenne,
@@ -71,12 +88,12 @@
         </div>
 
 
-        <form action="feldolgoz.php" method="POST" enctype="multipart/form-data">
+        <form action="arajanlat.php" method="POST" enctype="multipart/form-data">
             <div class="urlap_container">
                 
                     <fieldset>
                         <legend>Személyes adatok</legend>
-                        <label>Teljes név<input class="field" type="text" placeholder="Név" required> </label> 
+                        <label>Teljes név<input class="field" type="text" name="name" placeholder="Név" required> </label> 
                         <label>E-mail cím<input class="field" type="email" name="email" placeholder="E-mail" required></label> 
                         <label>Telefonszám<input class="field" type="tel" name="phonenumber" placeholder="Telefonszám" required> </label> 
                     </fieldset>
@@ -84,7 +101,7 @@
                     <fieldset>
                         <legend>Fotózás adatok</legend>
                         <label for="szolgaltatas">Milyen fotózás érdekel?</label> 
-                        <select id="szolgaltatas" class="field">
+                        <select id="szolgaltatas" name="szolgaltatas" class="field">
                         <option value="select">-Választ-</option>
                         <option value="eskuvo">Esküvői</option>
                         <option value="eskuvo2">Külön napi esküvői</option>
@@ -96,7 +113,7 @@
                         <option value="termek">Termék</option>
                         </select>
 
-                        <label>Melyik napon szeretnéd a fotózást?<input class="field" type="date" name="szuletes" min="1920-01-01"></label> 
+                        <label>Melyik napon szeretnéd a fotózást?<input class="field" type="date" name="datum" min="1920-01-01"></label> 
                         
                         <label for="szolgaltatas">Nemed?</label> <br>
                         <label for="op1">Férfi:</label>
@@ -107,7 +124,7 @@
                         <input type="radio" id="op3" name="sex" value="other" checked>
 
                     
-                        <textarea class="field" rows="8" maxlength="200" placeholder="Uzenet (max 200 karatker)"></textarea> 
+                        <textarea class="field" rows="8" maxlength="200" name="message" placeholder="Uzenet (max 200 karatker)"></textarea> 
                     </fieldset>
 
             
@@ -117,7 +134,7 @@
                   <!--Adatkezelési plussz fül???-->
 
                  <input type="reset" class="btn" name="reset-btn" value="Adatok törlése">
-                 <input type="submit" class="btn" name="submit-btn" value="Küldés"> <br>            
+                 <input type="submit" class="btn" name="submit-offer-btn" value="Küldés"> <br>            
             </div>
 
             <div class="content_container">
