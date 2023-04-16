@@ -8,7 +8,7 @@
             $newOffer = offerToArray();
             $offers[] = $newOffer;
             savePriceOffer($offers);  
-            setcookie("offerSuccess", "true");
+            echo '<script>alert("Az árajánlat sikeresen elküldve! Hamarosan felkeresünk email-en!")</script>';
         } 
     ?>
 
@@ -71,13 +71,6 @@
             <h1>Árajánlatkérés</h1>
             <hr class="decor_line">
         </div>
-
-        <?php
-            if(isset($_COOKIE["offerSuccess"])){
-                echo '<h3 class="success_message">Az űrlap kitöltése sikeres volt! Hamarosan válaszolunk emailben! </h3>';
-                setcookie("offerSuccess", "", time() - 3600);
-            }
-        ?>
 
         <div class="rovid_leiras_arajanlat">
                 <p>Az alábbi űrlap kitöltésével egyszerűen kérhetsz árajánlatot a felsorolt szolgáltatások bármelyikére.</p>
