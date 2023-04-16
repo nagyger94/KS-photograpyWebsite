@@ -80,7 +80,7 @@
             "password1" => password_hash($_POST["password1"], PASSWORD_DEFAULT) ,
             "password2" => $_POST["password2"], //Azért csak az egyiken használom a hash metódust, hogy az ellenőrzéskor a másikat tudjam "plain text" használni.
             "sex" => $_POST["sex"],
-            "avatar" => "../img/profile-pictures/" .$username. "-avatar"
+            "avatar" => "../img/profile-pictures/" .$username. "-avatar.png"
         ];
         return $data;
     }
@@ -98,7 +98,7 @@
             }
         }
 
-        if(isset($_FILES["avatar"])){ //Ha képet is cseréltünk
+        if(isset($_FILES["avatar"]) && $_FILES["avatar"]["size"] !== 0){ //Ha képet is cseréltünk
             $kiterjesztes = strtolower(pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION));
             $data["avatar"] = "../img/profile-pictures/" .$_SESSION["user"]["username"]. "-avatar.$kiterjesztes";
         }

@@ -109,7 +109,7 @@
                 
                     <fieldset>
                         <legend>Személyes adataid</legend>
-                        <label>Felhasználónév<input class="field" type="text" name="felhasznalonev" placeholder="Név" required> </label> 
+                        <label>Felhasználónév<input class="field" type="text" name="felhasznalonev" placeholder="Felhasználónév" required> </label> 
                         <label>Jelszó<input class="field" type="password" name="jelszo" placeholder="Jelszó" required> </label> 
                     </fieldset>
 

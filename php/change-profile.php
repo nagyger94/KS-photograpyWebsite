@@ -145,7 +145,7 @@
                         <label>Látható:</label>
                         <input type="radio" id="emailVisibility" name="emailVisibility" value=true checked>
                         <label>Rejtett:</label>
-                        <input type="radio" id="emailVisibility" name="emailVisibility" value="true">
+                        <input type="radio" id="emailVisibility" name="emailVisibility" value="false">
                     </div>
 
                     <div class="visibility-container">
