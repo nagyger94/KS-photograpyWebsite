@@ -24,17 +24,17 @@
 <body>
     <nav>
         <ul>
-            <li><a id="aktiv_oldal" href="kezdolap.php">Kezdőlap</a></li>
+            <li><a href="kezdolap.php">Kezdőlap</a></li>
             <li><a href="rolam.php">Rólam</a></li>
             <li><a href="referenciak.php">Referenciák</a></li>
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
             <li><a href="arajanlat.php">Árajánlatkérés</a></li>
             <li>
-                <a id="aktiv_oldal" href="">Ügyfeleinknek</a>
+                <span id="aktiv_oldal">Ügyfeleinknek</span>
                 <ul>
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
-                        <li><a id="aktiv_oldal" href="profile.php">Profilod</a></li>
+                        <li><a id="aktiv_aloldal" href="profile.php">Profilod</a></li>
                         <li><a href="velemenyek.php">Vélemények</a></li>
                     <?php } else { ?>
                         <li><a href="login.php">Bejelentkezés</a></li>
