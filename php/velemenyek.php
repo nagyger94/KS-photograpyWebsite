@@ -31,13 +31,13 @@
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
             <li><a id="login.php" href="arajanlat.php">Árajánlatkérés</a></li>
             <li>
-                <a href="">Ügyfeleinknek</a>
+                <span id="aktiv_oldal">Ügyfeleinknek</span>
                 <ul>
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
                         <li><a href="profile.php">Profilod</a></li>
-                        <li><a href="">Képeid</a></li>
-                        <li><a href="velemenyek.php">Vélemények</a></li>
+                        <li><a href="kepeid.php">Képeid</a></li>
+                        <li><a id="aktiv_aloldal" href="velemenyek.php">Vélemények</a></li>
                     <?php } else { ?>
                         <li><a href="login.php">Bejelentkezés</a></li>
                         <li><a href="signup.php">Regisztráció</a></li>

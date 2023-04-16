@@ -18,6 +18,17 @@
             echo '<script>alert("Sikeres belépés!")</script>';
 
             setcookie("first_sign_up", true);
+            
+            if(!(isset($_COOKIE["nameVisibility"]))){   //ez az első bejelentkezés a böngészőben
+                setcookie("nameVisibility", true);
+                setcookie("emailVisibility", true);
+                setcookie("sexVisibility", true);
+            } else {                                // vagy már vannak beállított értékek a profilban
+                setcookie("nameVisibility", $user["nameVisibility"]);
+                setcookie("emailVisibility", $user["emailVisibility"]);
+                setcookie("sexVisibility", $user["sexVisibility"]);
+            }
+
             $_SESSION["user"] = $user;
             header("Location:kezdolap.php");
             }
@@ -54,15 +65,15 @@
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
             <li><a id="login.php" href="arajanlat.php">Árajánlatkérés</a></li>
             <li>
-                <a id="aktiv_oldal" href="">Ügyfeleinknek</a>
+                <span id="aktiv_oldal">Ügyfeleinknek</span>
                 <ul>
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
                         <li><a href="profile.php">Profilod</a></li>
-                        <li><a href="">Képeid</a></li>
-                        <li><a href="">Vélemények</a></li>
+                        <li><a href="kepeid.php">Képeid</a></li>
+                        <li><a href="velemenyek.php">Vélemények</a></li>
                     <?php } else { ?>
-                        <li><a id="aktiv_oldal" href="login.php">Bejelentkezés</a></li>
+                        <li><a id="aktiv_aloldal" href="login.php">Bejelentkezés</a></li>
                         <li><a href="signup.php">Regisztráció</a></li>
                     <?php } ?>
                 </ul>

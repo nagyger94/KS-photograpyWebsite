@@ -93,14 +93,14 @@ nav li:hover{
     background-color: #c3a2aa;
 }
 
-nav a{
+nav a, nav span{
     text-decoration: none;
     font-size: 20px;
     font-weight: 500;
     color:black;
 }
 
-#aktiv_oldal{
+#aktiv_oldal, #aktiv_aloldal{
     border-bottom: 1px solid #a86c6c;
 }
 

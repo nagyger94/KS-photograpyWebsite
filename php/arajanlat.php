@@ -31,13 +31,13 @@
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
             <li><a id="aktiv_oldal" href="arajanlat.php">Árajánlatkérés</a></li>
             <li>
-                <a href="">Ügyfeleinknek</a>
+                <span>Ügyfeleinknek</span>
                 <ul>
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
                         <li><a href="profile.php">Profilod</a></li>
-                        <li><a href="">Képeid</a></li>
-                        <li><a href="">Vélemények</a></li>
+                        <li><a href="kepeid.php">Képeid</a></li>
+                        <li><a href="velemenyek.php">Vélemények</a></li>
                     <?php } else { ?>
                         <li><a href="login.php">Bejelentkezés</a></li>
                         <li><a href="signup.php">Regisztráció</a></li>
@@ -118,8 +118,7 @@
                   <!--Adatkezelési plussz fül???-->
 
                  <input type="reset" class="btn" name="reset-btn" value="Adatok törlése">
-                 <input type="submit" class="btn" name="submit-btn" value="Küldés"> <br>
-                
+                 <input type="submit" class="btn" name="submit-btn" value="Küldés"> <br>            
             </div>
 
             <div class="content_container">
@@ -129,14 +128,14 @@
 
             <div class="kapcsolatok">
                 <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2759.0500200988017!2d20.1464441!3d46.2492334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744887033fc8e71%3A0xb6e6512aab8e5cd4!2zU3plZ2VkLCDDgXJww6FkIHTDqXIgMiwgNjcyMA!5e0!3m2!1shu!2shu!4v1679122820652!5m2!1shu!2shu" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2759.0500200988017!2d20.1464441!3d46.2492334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744887033fc8e71%3A0xb6e6512aab8e5cd4!2zU3plZ2VkLCDDgXJww6FkIHTDqXIgMiwgNjcyMA!5e0!3m2!1shu!2shu!4v1679122820652!5m2!1shu!2shu" style="border:0;" allowfullscreen=""></iframe>
                 </div>
                 <div class="phonenumber">
-                    <i class="fa fa-phone fa-2x"></i>
+                    <i class="fa fa-phone fa-2x"> -</i>
                     <a class="contact" href="tel:+36991118888" >+36 99 111 8888 </a> <br>
                 </div>
                 <div class="phonenumber">
-                    <i class="fa fa-mail-bulk fa-2x"></i>
+                    <i class="fa fa-mail-bulk fa-2x"> -</i>
                     <a class="contact" href="mailto:katie.smith@gmail.com"> katie.smith@gmail.com </a>
                 </div>
             </div>

@@ -24,22 +24,22 @@
 <body>
     <nav>
         <ul>
-            <li><a id="aktiv_oldal" href="kezdolap.php">Kezdőlap</a></li>
+            <li><a href="kezdolap.php">Kezdőlap</a></li>
             <li><a href="rolam.php">Rólam</a></li>
             <li><a href="referenciak.php">Referenciák</a></li>
             <li><a href="szolgaltatasok.php">Szolgáltatások</a></li>
             <li><a href="arajanlat.php">Árajánlatkérés</a></li>
             <li>
-                <a id="aktiv_oldal" href="">Ügyfeleinknek</a>
+                <span id="aktiv_oldal">Ügyfeleinknek</span>
                 <ul>
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
                         <li><a href="profile.php">Profilod</a></li>
-                        <li><a href="">Képeid</a></li>
-                        <li><a href="">Vélemények</a></li>
+                        <li><a href="kepeid.php">Képeid</a></li>
+                        <li><a href="velemenyek.php">Vélemények</a></li>
                     <?php } else { ?>
                         <li><a href="login.php">Bejelentkezés</a></li>
-                        <li><a id="aktiv_oldal" href="signup.php">Regisztráció</a></li>
+                        <li><a id="aktiv_aloldal" href="signup.php">Regisztráció</a></li>
                     <?php } ?>
                 </ul>
             </li>
@@ -76,11 +76,6 @@
                             $users[] = $newUser;
                             saveUsers($users);
                             $_SESSION["signup"] = true;
-
-                            //Láthatósági beállítások
-                            setcookie("nameVisibility", true);
-                            setcookie("emailVisibility", true);
-                            setcookie("sexVisibility", true);
 
                             header("Location:login.php");
                         }   
