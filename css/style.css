@@ -885,7 +885,7 @@ h1{
 
 .urlap_container .slider input[type="range"]::-webkit-slider-thumb {
     width: 30px;
-    height:30px;
+    height: 30px;
     background: black;
     border: 2px solid black;
     border-radius: 50%;

@@ -35,7 +35,6 @@
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
                         <li><a href="profile.php">Profilod</a></li>
-                        <li><a href="">Képeid</a></li>
                         <li><a href="">Vélemények</a></li>
                     <?php } else { ?>
                         <li><a href="login.php">Bejelentkezés</a></li>

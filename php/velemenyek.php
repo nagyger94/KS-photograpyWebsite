@@ -36,7 +36,6 @@
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
                         <li><a href="profile.php">Profilod</a></li>
-                        <li><a href="kepeid.php">Képeid</a></li>
                         <li><a id="aktiv_aloldal" href="velemenyek.php">Vélemények</a></li>
                     <?php } else { ?>
                         <li><a href="login.php">Bejelentkezés</a></li>
@@ -107,7 +106,7 @@
             ?>
         
             <div class="comment-box">
-                <div class="kommnev"><?php echo $comment["name"] ?></div>
+                <div class="kommnev"><?php echo '<a href="profile.php">'.$comment["name"].'</a>'?></div>
                 <div class="komment"><?php echo $comment["message"]; ?></div>
                 <div class="datum"><?php echo $comment["date"]?></div>
                 <div class="ertekeles"><?php echo "Értékelése: 5/".$comment["ertek"]?></div>

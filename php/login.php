@@ -19,6 +19,7 @@
 
             setcookie("first_sign_up", true);
             
+
             if(!(isset($_COOKIE["nameVisibility"]))){   //ez az első bejelentkezés a böngészőben
                 setcookie("nameVisibility", true);
                 setcookie("emailVisibility", true);
@@ -70,7 +71,6 @@
                 <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
                         <li><a href="profile.php">Profilod</a></li>
-                        <li><a href="kepeid.php">Képeid</a></li>
                         <li><a href="velemenyek.php">Vélemények</a></li>
                     <?php } else { ?>
                         <li><a id="aktiv_aloldal" href="login.php">Bejelentkezés</a></li>

@@ -35,7 +35,6 @@
                     <?php if (isset($_SESSION["user"])) { ?>
                         <li><a href="logout.php">Kijelentkezés</a></li>
                         <li><a href="profile.php">Profilod</a></li>
-                        <li><a href="kepeid.php">Képeid</a></li>
                         <li><a href="velemenyek.php">Vélemények</a></li>
                     <?php } else { ?>
                         <li><a href="login.php">Bejelentkezés</a></li>
@@ -59,6 +58,7 @@
 
     <main>
         <?php
+                    var_dump(isset($_COOKIE["nameVisibility"]));
             if(isset($_COOKIE["deleted-profile"])){
                 setcookie("deleted-profile", true, time() - 3600); //kiírás után nincs szükségünk a cookie-ra
                 echo '<h2 class="success_message"> A profilod törlődött. Köszönjük, hogy igénybe vetted szolgáltatásunkat!</h2>';
