@@ -74,7 +74,7 @@
                         
                     </div>
                     <output name="value"></output>
-                    <input type="submit" class="btn" name="post" value="Post">
+                    <input type="submit" class="slider-btn" name="post" value="Post">
                 </div>
                     
                </form>
