@@ -58,7 +58,6 @@
 
     <main>
         <?php
-                    var_dump(isset($_COOKIE["nameVisibility"]));
             if(isset($_COOKIE["deleted-profile"])){
                 setcookie("deleted-profile", true, time() - 3600); //kiírás után nincs szükségünk a cookie-ra
                 echo '<h2 class="success_message"> A profilod törlődött. Köszönjük, hogy igénybe vetted szolgáltatásunkat!</h2>';
@@ -167,10 +166,15 @@
 
         <div id="hirlevel" class="footer_oszlop">
             <h2>Iratkozz fel hírlevelünkre:</h2>
-            <form action="feldolgoz.php" method="POST">
+            <form action="kezdolap.php" method="POST">
                 <label for="footer_input">Email:</label>
                 <input id="footer_input" type="email" name="email_add" size="30" maxlength="30">
                 <label> <input id="footer_submit" type="submit" value="Küldés"></label>
+                <?php
+                    if(isset($_POST["email_add"])){
+                        echo '<br> Feliratkozás sikerült!';
+                    }
+                ?>
             </form>
         </div>
         
