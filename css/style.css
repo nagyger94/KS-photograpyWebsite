@@ -839,8 +839,8 @@ h1{
 }
 
 .urlap_container .slider {
-    margin-left: 35%;
-    width: 200px;
+    margin-left: 30%;
+    width: 300px;
     height: 40px;
     padding: 0.5rem 1rem;
     background: #b58f9a;
@@ -865,7 +865,7 @@ h1{
     transition: .3s;
     margin-top: 5%;
     font-family: 'Spectral',serif;
-    margin-left: 30%;
+    margin-left: 40%;
 }
 
 .urlap_container .slider-btn:hover{
